@@ -5,34 +5,42 @@ import {
   Image,
   StyleSheet,
   TextInput,
+  StatusBar,
   TouchableOpacity,
 } from 'react-native';
 
 const LoginScreen = () => {
   return (
-    //this is the main container of the login page
+    /*this is the main container of the login page*/
     <View style={styles.mainContainer}>
+      <StatusBar translucent backgroundColor={'transparent'} />
       <Image source={require('../images/logo.png')} style={styles.imageStyle} />
 
       <Text style={styles.mainHeader}>Login</Text>
 
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.inputStyle}
-          autoCapitalize="none"
-          autoCorrect={false}
-          placeholder="email address"
-        />
+      <View>
+        <TouchableOpacity style={styles.tiles} activeOpacity={0.9}>
+          <View style={styles.miniContainer}></View>
+          <TextInput
+            style={styles.inputStyle}
+            autoCapitalize="none"
+            autoCorrect={false}
+            placeholder="email address"
+          />
+        </TouchableOpacity>
       </View>
 
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.inputStyle}
-          autoCapitalize="none"
-          autoCorrect={false}
-          secureTextEntry={true}
-          placeholder="password"
-        />
+      <View>
+        <TouchableOpacity style={styles.tiles} activeOpacity={0.9}>
+          <View style={styles.miniContainer}></View>
+          <TextInput
+            style={styles.inputStyle}
+            autoCapitalize="none"
+            autoCorrect={false}
+            secureTextEntry={true}
+            placeholder="password"
+          />
+        </TouchableOpacity>
       </View>
 
       <TouchableOpacity style={styles.button} activeOpacity={0.9}>
@@ -62,6 +70,7 @@ const styles = StyleSheet.create({
     height: '100%',
     paddingHorizontal: 30,
     paddingTop: 80,
+    paddingBottom: 40,
     backgroundColor: '#432344',
   },
 
@@ -79,16 +88,12 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
 
-  miniInputContainer: {
-    color:'#FFC03D',
-    alignItems:'center'
-  },
-
-  label: {
-    color: '#7d7d7d',
-    marginTop: 10,
-    marginBottom: 5,
-    lineHeight: 25,
+  miniContainer: {
+    height: 50,
+    width: 50,
+    backgroundColor: '#FFC03D',
+    borderRadius: 12,
+    overflow: 'hidden',
   },
 
   inputStyle: {
@@ -96,10 +101,9 @@ const styles = StyleSheet.create({
     borderColor: '#ffffff',
     backgroundColor: '#ffffff',
     fontFamily: 'Poppins-Medium',
-    paddingHorizontal: 15,
     paddingVertical: 7,
     borderRadius: 12,
-    width: 320,
+    width: 270,
     height: 50,
   },
 
@@ -131,6 +135,16 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
     fontSize: 16,
     color: '#ffffff',
+  },
+
+  tiles: {
+    width: 320,
+    height: 50,
+    marginTop: 30,
+    backgroundColor: '#ffffff',
+    borderRadius: 12,
+    alignSelf: 'center',
+    flexDirection: 'row',
   },
 });
 export default LoginScreen;
