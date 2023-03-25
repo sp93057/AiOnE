@@ -9,6 +9,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+import {Mail, Lock, ArrowRight} from 'svg';
+
 const LoginScreen = () => {
   return (
     /*this is the main container of the login page*/
@@ -20,7 +22,9 @@ const LoginScreen = () => {
 
       <View>
         <TouchableOpacity style={styles.tiles} activeOpacity={0.9}>
-          <View style={styles.miniContainer}></View>
+          <View style={styles.miniContainer}>
+            <Mail height={35} width={35} />
+          </View>
           <TextInput
             style={styles.inputStyle}
             autoCapitalize="none"
@@ -32,7 +36,9 @@ const LoginScreen = () => {
 
       <View>
         <TouchableOpacity style={styles.tiles} activeOpacity={0.9}>
-          <View style={styles.miniContainer}></View>
+          <View style={styles.miniContainer}>
+            <Lock height={35} width={35} />
+          </View>
           <TextInput
             style={styles.inputStyle}
             autoCapitalize="none"
@@ -45,6 +51,7 @@ const LoginScreen = () => {
 
       <TouchableOpacity style={styles.button} activeOpacity={0.9}>
         <Text style={styles.buttonText}>Login</Text>
+        <ArrowRight height={24} width={24} />
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.inputContainer} activeOpacity={0.7}>
@@ -54,12 +61,13 @@ const LoginScreen = () => {
       <View
         style={[
           styles.inputContainer,
-          {borderBottomColor: '#ffffff', borderBottomWidth: 2},
+          {borderBottomColor: '#ffffff', borderBottomWidth: 1},
         ]}
       />
 
       <TouchableOpacity style={styles.button} activeOpacity={0.9}>
         <Text style={styles.buttonText}>Login via SSO</Text>
+        <ArrowRight height={24} width={24} />
       </TouchableOpacity>
     </View>
   );
@@ -94,6 +102,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFC03D',
     borderRadius: 12,
     overflow: 'hidden',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
   },
 
   inputStyle: {
@@ -115,13 +126,21 @@ const styles = StyleSheet.create({
     width: 320,
     alignSelf: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
     padding: 10,
+    flexDirection: 'row',
   },
 
   buttonText: {
     fontFamily: 'Poppins-Bold',
     fontSize: 20,
     color: '#000000',
+    marginRight: 5,
+  },
+
+  icons: {
+    height: 40,
+    width: 40,
   },
 
   imageStyle: {

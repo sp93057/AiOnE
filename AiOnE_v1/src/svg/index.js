@@ -1,0 +1,14 @@
+export {default as Mail} from './mail-fill.svg';
+export {default as Lock} from './lock-password-fill.svg';
+export {default as ArrowRight} from './arrow-right-line.svg';
+export {default as NavigationIcon} from './compass-discover-line.svg';
+export {default as ScanIcon} from './qr-scan-line.svg';
+export {default as FeedIcon} from './rss-fill.svg';
+export {default as FoodIcon} from './cake-2-fill.svg';
+export {default as BusIcon} from './bus-2-line.svg';
+export {default as ParkingIcon} from './parking-box-line.svg';
+export {default as OthersIcon} from './hand-coin-line.svg';
+export {default as SidebarIcon} from './menu-2-line.svg';
+export {default as InformationIcon} from './information-line.svg';
+export {default as NotificationIcon} from './notification-3-line.svg';
+export {default as ProfileIcon} from './user-3-line.svg';

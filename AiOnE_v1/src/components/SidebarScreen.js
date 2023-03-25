@@ -9,7 +9,7 @@ import {
 
 const SidebarScreen = () => {
   return (
-    <View style = {styles.mainContainer}>
+    <View style={styles.mainContainer}>
       <StatusBar translucent backgroundColor={'transparent'} />
 
       <View style={styles.subContainer}>
@@ -37,30 +37,29 @@ const SidebarScreen = () => {
 };
 
 const styles = StyleSheet.create({
-
   mainContainer: {
-    backgroundColor: "#432344",
-    height: "100%",
+    backgroundColor: '#432344',
+    height: '100%',
     padding: 30,
-    alignItems: 'center'
+    alignItems: 'center',
   },
 
   subContainer: {
-    marginTop:150,
-    alignItems: 'center'
+    marginTop: 150,
+    alignItems: 'center',
   },
 
   miniContainer: {
     height: 50,
     width: 50,
-    backgroundColor:'transparent',
+    backgroundColor: 'transparent',
     borderRadius: 12,
     overflow: 'hidden',
   },
 
   tiles: {
     marginTop: 10,
-    backgroundColor:'transparent',
+    backgroundColor: 'transparent',
     borderRadius: 12,
     height: 50,
     width: 340,
@@ -93,4 +92,3 @@ const styles = StyleSheet.create({
   },
 });
 export default SidebarScreen;
-
