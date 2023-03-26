@@ -1,17 +1,46 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   Text,
   View,
   Image,
-  StyleSheet,
   TextInput,
   StatusBar,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
-
 import {Mail, Lock, ArrowRight} from 'svg';
+import styles from '../styles/Loginscreen.styles.js';
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  // const [isLoading, setIsLoading] = useState(false);
+
+  const submitData = () => {
+    fetch('https://raw.githubusercontent.com/sp93057/AiOne_DB/main/login_creds.json')
+      .then(response => response.json())
+      .then(data => {
+        const user = data.users.find(u => u.username === username && u.password === password);
+        if (user) {
+          // Authentication successful, navigate to the next screen
+          navigation.navigate('Home');
+        } else {
+          // Authentication failed, show an error message
+          if(username==="" && password==="")
+          {
+            Alert.alert("Please enter Credentials!")
+          }
+          else{
+            Alert.alert("Authentication FAILED!");
+          }
+        }
+      })
+      .catch(error => {
+        // Handle fetch error
+
+      });
+  };
+
   return (
     /*this is the main container of the login page*/
     <View style={styles.mainContainer}>
@@ -29,7 +58,9 @@ const LoginScreen = () => {
             style={styles.inputStyle}
             autoCapitalize="none"
             autoCorrect={false}
-            placeholder="email address"
+            placeholder="Username"
+            value={username}
+            onChangeText={setUsername}
           />
         </TouchableOpacity>
       </View>
@@ -44,12 +75,18 @@ const LoginScreen = () => {
             autoCapitalize="none"
             autoCorrect={false}
             secureTextEntry={true}
-            placeholder="password"
+            placeholder="Password"
+            value={password}
+            onChangeText={setPassword}
           />
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={styles.button} activeOpacity={0.9}>
+      <TouchableOpacity
+        style={styles.button}
+        activeOpacity={0.9}
+        onPress={submitData}
+      >
         <Text style={styles.buttonText}>Login</Text>
         <ArrowRight height={24} width={24} />
       </TouchableOpacity>
@@ -73,97 +110,4 @@ const LoginScreen = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  mainContainer: {
-    height: '100%',
-    paddingHorizontal: 30,
-    paddingTop: 80,
-    paddingBottom: 40,
-    backgroundColor: '#432344',
-  },
-
-  mainHeader: {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 32,
-    color: '#ffffff',
-    paddingTop: 40,
-    paddingBottom: 20,
-    alignSelf: 'center',
-  },
-
-  inputContainer: {
-    alignItems: 'center',
-    marginTop: 30,
-  },
-
-  miniContainer: {
-    height: 50,
-    width: 50,
-    backgroundColor: '#FFC03D',
-    borderRadius: 12,
-    overflow: 'hidden',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
-  },
-
-  inputStyle: {
-    borderWidth: 1,
-    borderColor: '#ffffff',
-    backgroundColor: '#ffffff',
-    fontFamily: 'Poppins-Medium',
-    paddingVertical: 7,
-    borderRadius: 12,
-    width: 270,
-    height: 50,
-  },
-
-  button: {
-    marginTop: 30,
-    backgroundColor: '#FFC03D',
-    borderRadius: 12,
-    height: 50,
-    width: 320,
-    alignSelf: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 10,
-    flexDirection: 'row',
-  },
-
-  buttonText: {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 20,
-    color: '#000000',
-    marginRight: 5,
-  },
-
-  icons: {
-    height: 40,
-    width: 40,
-  },
-
-  imageStyle: {
-    width: 263,
-    height: 141,
-    alignSelf: 'center',
-  },
-
-  forgotPassText: {
-    fontFamily: 'Poppins-Medium',
-    textDecorationLine: 'underline',
-    fontSize: 16,
-    color: '#ffffff',
-  },
-
-  tiles: {
-    width: 320,
-    height: 50,
-    marginTop: 30,
-    backgroundColor: '#ffffff',
-    borderRadius: 12,
-    alignSelf: 'center',
-    flexDirection: 'row',
-  },
-});
 export default LoginScreen;
