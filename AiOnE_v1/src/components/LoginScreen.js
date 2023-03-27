@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {
   Text,
   View,
@@ -14,7 +14,7 @@ import styles from '../styles/Loginscreen.styles.js';
 const LoginScreen = ({navigation}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  // const [isLoading, setIsLoading] = useState(false);
+
 
   const submitData = () => {
     fetch('https://raw.githubusercontent.com/sp93057/AiOne_DB/main/login_creds.json')
@@ -37,7 +37,7 @@ const LoginScreen = ({navigation}) => {
       })
       .catch(error => {
         // Handle fetch error
-
+        Alert.alert("Error Unknown!")
       });
   };
 

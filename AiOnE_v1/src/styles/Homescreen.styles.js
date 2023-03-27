@@ -14,15 +14,15 @@ export default StyleSheet.create({
     },
   
     sidebarContainer: {
-      flex: 5,
+      flex: 1,
       flexDirection: 'row',
       alignItems: 'center',
-      /*backgroundColor: "#000000" --> flex logic 5+5 = 10, 
-      so each flex takes 5/10 i.e half space in a row*/
+      /*backgroundColor: "#000000" --> flex logic 1+1 = 2, 
+      so each flex takes 1/2 i.e half space in a row*/
     },
   
     iconContainer: {
-      flex: 5,
+      flex: 1,
       flexDirection: 'row',
       justifyContent: 'flex-end',
       alignItems: 'center',
@@ -85,7 +85,7 @@ export default StyleSheet.create({
     },
   
     tiles: {
-      marginTop: 30,
+      margin: 15,
       backgroundColor: '#ffffff',
       borderRadius: 12,
       height: 70,
