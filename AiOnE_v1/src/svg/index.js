@@ -12,3 +12,7 @@ export {default as SidebarIcon} from './menu-2-line.svg';
 export {default as InformationIcon} from './information-line.svg';
 export {default as NotificationIcon} from './notification-3-line.svg';
 export {default as ProfileIcon} from './user-3-line.svg';
+export {default as ChangePwdIcon} from './lock-2-line.svg';
+export {default as ContactIcon} from './phone-line.svg';
+export {default as CloseIcon} from './close-line.svg';
+export {default as BackIcon} from './arrow-left-line.svg';

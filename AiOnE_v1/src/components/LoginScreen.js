@@ -15,29 +15,34 @@ const LoginScreen = ({navigation}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-
   const submitData = () => {
-    fetch('https://raw.githubusercontent.com/sp93057/AiOne_DB/main/login_creds.json')
+    fetch(
+      'https://raw.githubusercontent.com/sp93057/AiOne_DB/main/login_creds.json',
+    )
       .then(response => response.json())
       .then(data => {
-        const user = data.users.find(u => u.username === username && u.password === password);
+        const user = data.users.find(
+          u => u.username === username && u.password === password,
+        );
         if (user) {
           // Authentication successful, navigate to the next screen
           navigation.navigate('Home');
+          setUsername('');
+          setPassword('');
         } else {
           // Authentication failed, show an error message
-          if(username==="" && password==="")
-          {
-            Alert.alert("Please enter Credentials!")
-          }
-          else{
-            Alert.alert("Authentication FAILED!");
+          if (username === '' && password === '') {
+            Alert.alert('Please enter Credentials!');
+          } else {
+            Alert.alert('Authentication FAILED!');
+            setUsername('');
+            setPassword('');
           }
         }
       })
       .catch(error => {
         // Handle fetch error
-        Alert.alert("Error Unknown!")
+        Alert.alert('Error Unknown!');
       });
   };
 

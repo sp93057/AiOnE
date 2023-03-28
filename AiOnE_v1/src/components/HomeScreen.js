@@ -24,10 +24,10 @@ import {
 
 import styles from '../styles/Homescreen.styles.js';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const [backgroundColor1, setbackgroundColor1] = useState('#52CB5E');
   const [backgroundColor2, setbackgroundColor2] = useState('#ffffff');
-  
+
   const HomeButtonPress = () => {
     setbackgroundColor1('#52CB5E');
     setbackgroundColor2('#ffffff');
@@ -43,7 +43,7 @@ const HomeScreen = () => {
       <StatusBar translucent backgroundColor={'transparent'} />
       <View style={styles.topContainer}>
         <View style={styles.sidebarContainer}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Sidebar')}>
             <SidebarIcon height={30} width={30} fill="#ffffff" />
           </TouchableOpacity>
         </View>
@@ -65,20 +65,20 @@ const HomeScreen = () => {
 
       <View style={styles.headerContainer}>
         <TouchableOpacity
-          style={[{backgroundColor: backgroundColor1},styles.button]}
+          style={[{ backgroundColor: backgroundColor1 }, styles.button]}
           activeOpacity={0.7}
-          onPress= {HomeButtonPress}
+          onPress={HomeButtonPress}
         >
           <Text style={styles.buttonText}>Home</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={[
-            {backgroundColor: backgroundColor2},
+            { backgroundColor: backgroundColor2 },
             styles.button,
           ]}
           activeOpacity={0.7}
-          onPress = {FeedsButtonPress}
+          onPress={FeedsButtonPress}
         >
           <Text style={styles.buttonText}>Feeds</Text>
         </TouchableOpacity>
@@ -92,7 +92,8 @@ const HomeScreen = () => {
           <Text style={styles.tilesText}>Navigation</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.tiles} activeOpacity={0.7}>
+        <TouchableOpacity style={styles.tiles} activeOpacity={0.7}
+          onPress={() => navigation.navigate('QRScanner')}>
           <View style={styles.miniContainer}>
             <ScanIcon height={50} width={50} />
           </View>
@@ -146,3 +147,4 @@ const HomeScreen = () => {
 };
 
 export default HomeScreen;
+

@@ -5,32 +5,45 @@ import {
   StatusBar,
   TouchableOpacity,
 } from 'react-native';
-
+import { ProfileIcon, ChangePwdIcon, ContactIcon, CloseIcon } from 'svg';
 import styles from '../styles/Sidebar.styles.js'
 
-const SidebarScreen = () => {
+const SidebarScreen = ({navigation}) => {
   return (
     <View style={styles.mainContainer}>
       <StatusBar translucent backgroundColor={'transparent'} />
 
+      <View style={styles.topCrossContainer}>
+      <TouchableOpacity onPress={()=>navigation.navigate('Home')}>
+        <CloseIcon height={40} width={40} fill="#ffffff"/>
+      </TouchableOpacity>
+      </View>
+
       <View style={styles.subContainer}>
+
         <TouchableOpacity style={styles.tiles} activeOpacity={0.2}>
-          <View style={styles.miniContainer}></View>
+          <View style={styles.miniContainer}>
+          <ProfileIcon height={30} width={30} fill="#ffffff" />
+          </View>
           <Text style={styles.tilesText}>Profile</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.tiles} activeOpacity={0.2}>
-          <View style={styles.miniContainer}></View>
+          <View style={styles.miniContainer}>
+          <ChangePwdIcon height={30} width={30} fill="#ffffff" />
+          </View>
           <Text style={styles.tilesText}>Change Password</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.tiles} activeOpacity={0.2}>
-          <View style={styles.miniContainer}></View>
+          <View style={styles.miniContainer}>
+          <ContactIcon height={30} width={30} fill="#ffffff" />
+          </View>
           <Text style={styles.tilesText}>Contact Us</Text>
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={styles.button} activeOpacity={0.9}>
+      <TouchableOpacity style={styles.button} activeOpacity={0.9} onPress={()=>navigation.navigate('Login')}>
         <Text style={styles.buttonText}>Logout</Text>
       </TouchableOpacity>
     </View>

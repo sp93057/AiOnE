@@ -26,7 +26,6 @@ export default StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'flex-end',
       alignItems: 'center',
-      // backgroundColor: "#000000"
     },
   
     miniIconStyle: {
