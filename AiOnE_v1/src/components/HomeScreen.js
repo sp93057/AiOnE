@@ -9,13 +9,6 @@ import {
 } from 'react-native';
 
 import {
-  NavigationIcon,
-  ScanIcon,
-  FeedIcon,
-  FoodIcon,
-  BusIcon,
-  ParkingIcon,
-  OthersIcon,
   SidebarIcon,
   InformationIcon,
   NotificationIcon,
@@ -23,19 +16,36 @@ import {
 } from 'svg';
 
 import styles from '../styles/Homescreen.styles.js';
+import HomeButtons from './HomeButtons.js';
+import MainFeed from './MainFeed.js';
+
 
 const HomeScreen = ({ navigation }) => {
   const [backgroundColor1, setbackgroundColor1] = useState('#52CB5E');
   const [backgroundColor2, setbackgroundColor2] = useState('#ffffff');
+  const [activeButton, setActiveButton] = useState('home');
 
   const HomeButtonPress = () => {
     setbackgroundColor1('#52CB5E');
     setbackgroundColor2('#ffffff');
+    setActiveButton('home');
   };
 
   const FeedsButtonPress = () => {
     setbackgroundColor2('#52CB5E');
     setbackgroundColor1('#ffffff');
+    setActiveButton('feeds');
+  };
+
+  const renderComponent = () => {
+    switch (activeButton) {
+      case 'home':
+        return <HomeButtons navigation={navigation}/>;
+      case 'feeds':
+        return <MainFeed/>;
+      default:
+        return null;
+    }
   };
 
   return (
@@ -85,55 +95,7 @@ const HomeScreen = ({ navigation }) => {
       </View>
 
       <ScrollView>
-        <TouchableOpacity style={styles.tiles} activeOpacity={0.7}>
-          <View style={styles.miniContainer}>
-            <NavigationIcon height={50} width={50} />
-          </View>
-          <Text style={styles.tilesText}>Navigation</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.tiles} activeOpacity={0.7}
-          onPress={() => navigation.navigate('QRScanner')}>
-          <View style={styles.miniContainer}>
-            <ScanIcon height={50} width={50} />
-          </View>
-          <Text style={styles.tilesText}>Scan</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.tiles} activeOpacity={0.7}>
-          <View style={styles.miniContainer}>
-            <FeedIcon height={50} width={50} />
-          </View>
-          <Text style={styles.tilesText}>Recent Feed</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.tiles} activeOpacity={0.7}>
-          <View style={styles.miniContainer}>
-            <FoodIcon height={50} width={50} />
-          </View>
-          <Text style={styles.tilesText}>Food Joint</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.tiles} activeOpacity={0.7}>
-          <View style={styles.miniContainer}>
-            <BusIcon height={50} width={50} />
-          </View>
-          <Text style={styles.tilesText}>Bus Routes</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.tiles} activeOpacity={0.7}>
-          <View style={styles.miniContainer}>
-            <ParkingIcon height={50} width={50} />
-          </View>
-          <Text style={styles.tilesText}>Parking</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.tiles} activeOpacity={0.7}>
-          <View style={styles.miniContainer}>
-            <OthersIcon height={50} width={50} />
-          </View>
-          <Text style={styles.tilesText}>Others</Text>
-        </TouchableOpacity>
+        {renderComponent()}
       </ScrollView>
 
       <View style={styles.bottomContainer}>
@@ -145,6 +107,4 @@ const HomeScreen = ({ navigation }) => {
     </View>
   );
 };
-
 export default HomeScreen;
-

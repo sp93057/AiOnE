@@ -8,9 +8,7 @@ import {
 import { BackIcon } from 'svg';
 import { ScrollView } from 'react-native';
 
-
 import styles from '../styles/ScanQRScreen.styles.js'
-// import { RNCamera } from 'react-native-camera';
 
 
 const ScanQRScreen = ({ navigation }) => {
@@ -27,10 +25,6 @@ const ScanQRScreen = ({ navigation }) => {
 
             <View style={styles.middleContainer}>
                 <View style={styles.cameraContainer}>
-                    {/* <RNCamera
-                        type={RNCamera.Constants.Type.back}
-                        flashMode={RNCamera.Constants.FlashMode.off}
-                    /> */}
                 </View>
             </View>
 
