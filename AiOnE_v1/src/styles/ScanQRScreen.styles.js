@@ -8,26 +8,20 @@ export default StyleSheet.create({
     },
 
     topContainer: {
+        flex:1,
+        width:'100%',
         padding: 30,
         marginTop: 50,
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
+        position:"absolute",
+        zIndex: 1,
+        backgroundColor: '#E8E8E8'
     },
 
     middleContainer: {
-        flex:1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    
-    },
-
-    cameraContainer: {
-        width: 300,
-        height: 300,
-        backgroundColor: '#ffffff',
-        flexDirection: 'row',
-        borderRadius: 24
+        flex:1
     },
 
     bottomContainer: {
