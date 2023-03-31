@@ -37,8 +37,8 @@ export default StyleSheet.create({
     headerContainer: {
       flexDirection: 'row',
       alignItems: 'center',
+      padding: 20,
       justifyContent: 'center',
-      paddingBottom: 10,
     },
   
     bottomContainer: {
@@ -60,7 +60,6 @@ export default StyleSheet.create({
     },
   
     button: {
-      marginTop: 30,
       borderRadius: 24,
       height: 50,
       width: 100,
