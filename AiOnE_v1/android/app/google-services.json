@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "786970585463",
+    "project_id": "aione-sp93057",
+    "storage_bucket": "aione-sp93057.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:786970585463:android:59896cc6dd52e2e3365972",
+        "android_client_info": {
+          "package_name": "com.aione_v1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "786970585463-8cji65ekh6c5lt3h6hg3gejnnnlv52u5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQ7UrxHGy4xz7QbJ2f14PgSPXjhNUjJbQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "786970585463-8cji65ekh6c5lt3h6hg3gejnnnlv52u5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

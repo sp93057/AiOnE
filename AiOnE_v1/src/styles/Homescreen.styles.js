@@ -67,6 +67,13 @@ export default StyleSheet.create({
       alignItems: 'center',
       padding: 10,
       marginRight: 10,
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 3.84,
+      elevation: 5,
     },
   
     buttonText: {
@@ -91,6 +98,13 @@ export default StyleSheet.create({
       alignSelf: 'center',
       alignItems: 'flex-start',
       flexDirection: 'row',
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 3.84,
+      elevation: 5,
     },
   
     tilesText: {

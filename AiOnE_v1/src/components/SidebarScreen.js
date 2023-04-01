@@ -5,10 +5,21 @@ import {
   StatusBar,
   TouchableOpacity,
 } from 'react-native';
-import { ProfileIcon, ChangePwdIcon, ContactIcon, CloseIcon } from 'svg';
+
+
+import { ProfileIcon, ChangePwdIcon, ContactIcon, CloseIcon, ArrowRight } from 'svg';
 import styles from '../styles/Sidebar.styles.js'
 
 const SidebarScreen = ({navigation}) => {
+  
+  const logout = () => {
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'Login' }],
+    });
+  };
+
+  
   return (
     <View style={styles.mainContainer}>
       <StatusBar translucent backgroundColor={'transparent'} />
@@ -43,8 +54,9 @@ const SidebarScreen = ({navigation}) => {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={styles.button} activeOpacity={0.9} onPress={()=>navigation.navigate('Login')}>
+      <TouchableOpacity style={styles.button} activeOpacity={0.9} onPress={logout}>
         <Text style={styles.buttonText}>Logout</Text>
+        <ArrowRight height={24} width={24} />
       </TouchableOpacity>
     </View>
   );

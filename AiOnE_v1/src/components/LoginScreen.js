@@ -11,6 +11,7 @@ import {
 import {Mail, Lock, ArrowRight} from 'svg';
 import styles from '../styles/Loginscreen.styles.js';
 
+
 const LoginScreen = ({navigation}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -26,7 +27,7 @@ const LoginScreen = ({navigation}) => {
         );
         if (user) {
           // Authentication successful, navigate to the next screen
-          navigation.navigate('Home');
+          navigation.replace('Home');
           setUsername('');
           setPassword('');
         } else {
@@ -35,8 +36,8 @@ const LoginScreen = ({navigation}) => {
             Alert.alert('Please enter Credentials!');
           } else {
             Alert.alert('Authentication FAILED!');
-            setUsername('');
             setPassword('');
+            setUsername('');
           }
         }
       })

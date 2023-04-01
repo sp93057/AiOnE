@@ -62,12 +62,15 @@ export default StyleSheet.create({
       width: 320,
       alignSelf: 'center',
       alignItems: 'center',
+      justifyContent: 'center',
       padding: 10,
+      flexDirection: 'row',
     },
   
     buttonText: {
       fontFamily: 'Poppins-Bold',
       fontSize: 20,
       color: '#000000',
+      marginRight: 5,
     },
   });
