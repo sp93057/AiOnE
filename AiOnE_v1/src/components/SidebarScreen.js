@@ -11,39 +11,25 @@ import {
 import { ProfileIcon, ChangePwdIcon, ContactIcon, CloseIcon, ArrowRight } from 'svg';
 import styles from '../styles/Sidebar.styles.js'
 import { getAuth, signOut } from "firebase/auth";
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const auth = getAuth();
 
 const SidebarScreen = ({ navigation }) => {
 
-  const clearUserData = async () => {
-    try {
-      await AsyncStorage.clear();
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const logout = async () => {
-    try {
-      await clearUserData();
-      signOut(auth)
-        .then(() => {
-          // Successfully signed out
-          navigation.reset({
-            index: 0,
-            routes: [{ name: 'Login' }],
-          });
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          Alert.alert(errorMessage);
+  const logout = () => {
+    signOut(auth)
+      .then(() => {
+        // Successfully signed out
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'Login' }],
         });
-    } catch (error) {
-      console.log(error);
-    }
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        Alert.alert(errorMessage);
+      });
   };
 
 

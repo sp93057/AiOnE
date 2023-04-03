@@ -12,7 +12,6 @@ import { Mail, Lock, ArrowRight } from 'svg';
 import styles from '../styles/Loginscreen.styles.js';
 import { getAuth, signInWithEmailAndPassword} from "firebase/auth";
 import app from '../../firebaseConfig';
-import SidebarScreen from './SidebarScreen';
 
 const auth = getAuth();
 
