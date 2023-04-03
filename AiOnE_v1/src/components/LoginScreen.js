@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   Text,
   View,
@@ -8,14 +8,20 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
-import {Mail, Lock, ArrowRight} from 'svg';
+import { Mail, Lock, ArrowRight } from 'svg';
 import styles from '../styles/Loginscreen.styles.js';
+import { getAuth, signInWithEmailAndPassword} from "firebase/auth";
+import app from '../../firebaseConfig';
+import SidebarScreen from './SidebarScreen';
+
+const auth = getAuth();
 
 
-const LoginScreen = ({navigation}) => {
+const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  /* -------------Login procedure using Github API ------------------------ 
   const submitData = () => {
     fetch(
       'https://raw.githubusercontent.com/sp93057/AiOne_DB/main/login_creds.json',
@@ -45,7 +51,45 @@ const LoginScreen = ({navigation}) => {
         // Handle fetch error
         Alert.alert('Error Unknown!');
       });
-  };
+  }; 
+  -------------------------------------------------------------------------
+  */
+
+
+  /*----------------Login using Firebase Authentication service---------------*/
+  const handleLogin = () => {
+    signInWithEmailAndPassword(auth, username, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        setUsername('');
+        setPassword('');
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        if (username === '' && password === '') {
+          Alert.alert("Enter credentials");
+        } else {
+          Alert.alert(errorMessage);
+          setPassword('');
+          setUsername('');
+        }
+      });
+  }
+  
+  // Listen for changes in the authentication state
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      // User is signed in
+      navigation.replace('Home');
+    } else {
+      // User is signed out
+      navigation.navigate('Login');
+    }
+  });
+  
+  /* -------------------------------------------------------------------------- */
 
   return (
     /*this is the main container of the login page*/
@@ -91,7 +135,7 @@ const LoginScreen = ({navigation}) => {
       <TouchableOpacity
         style={styles.button}
         activeOpacity={0.9}
-        onPress={submitData}
+        onPress={handleLogin}
       >
         <Text style={styles.buttonText}>Login</Text>
         <ArrowRight height={24} width={24} />
@@ -104,7 +148,7 @@ const LoginScreen = ({navigation}) => {
       <View
         style={[
           styles.inputContainer,
-          {borderBottomColor: '#ffffff', borderBottomWidth: 1},
+          { borderBottomColor: '#ffffff', borderBottomWidth: 1 },
         ]}
       />
 
