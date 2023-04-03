@@ -10,11 +10,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.18.1",
     "@react-navigation/drawer": "^6.6.2",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",
     "firebase": "^9.19.1",
-    "firebaseui": "^6.0.2",
     "react": "18.1.0",
     "react-native": "0.70.7",
     "react-native-camera-kit": "^13.0.0",
