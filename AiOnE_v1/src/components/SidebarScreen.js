@@ -45,7 +45,7 @@ const SidebarScreen = ({ navigation }) => {
 
       <View style={styles.subContainer}>
 
-        <TouchableOpacity style={styles.tiles} activeOpacity={0.2}>
+        <TouchableOpacity style={styles.tiles} activeOpacity={0.2} onPress={() => navigation.navigate('ProfilePage')}>
           <View style={styles.miniContainer}>
             <ProfileIcon height={30} width={30} fill="#ffffff" />
           </View>

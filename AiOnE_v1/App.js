@@ -5,6 +5,7 @@ import SidebarScreen from './src/components/SidebarScreen';
 import ScanQRScreen from './src/components/ScanQRScreen';
 import HomeButtons from './src/components/HomeButtons';
 import SplashScreen from './src/components/SplashScreen';
+import ProfilePage from './src/components/ProfilePage';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { Animated } from 'react-native';
@@ -40,6 +41,7 @@ const App = () => {
         <Stack.Screen name="Sidebar" component={SidebarScreen}/>
         <Stack.Screen name ="HomeButtons" component={HomeButtons}/>
         <Stack.Screen name="QRScanner" component={ScanQRScreen}/>
+        <Stack.Screen name = "ProfilePage" component = {ProfilePage}/>
       </Stack.Navigator>
       )}
     </NavigationContainer>
