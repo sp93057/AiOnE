@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import {
   Text,
   View,
@@ -21,31 +21,19 @@ import MainFeed from './MainFeed.js';
 
 
 const HomeScreen = ({ navigation }) => {
-  const [backgroundColor1, setbackgroundColor1] = useState('#52CB5E');
-  const [backgroundColor2, setbackgroundColor2] = useState('#ffffff');
+
   const [activeButton, setActiveButton] = useState('home');
 
-  const HomeButtonPress = () => {
-    setbackgroundColor1('#52CB5E');
-    setbackgroundColor2('#ffffff');
-    setActiveButton('home');
-  };
-
-  const FeedsButtonPress = () => {
-    setbackgroundColor2('#52CB5E');
-    setbackgroundColor1('#ffffff');
-    setActiveButton('feeds');
-  };
+  const handleButtonPress = useCallback((buttonName) => {
+    setActiveButton(buttonName);
+  }, []);
 
   const renderComponent = () => {
-    switch (activeButton) {
-      case 'home':
-        return <HomeButtons navigation={navigation}/>;
-      case 'feeds':
-        return <MainFeed/>;
-      default:
-        return null;
-    }
+    return activeButton === 'home' ? (
+      <HomeButtons navigation={navigation} />
+    ) : (
+      <MainFeed />
+    );
   };
 
   return (
@@ -67,7 +55,7 @@ const HomeScreen = ({ navigation }) => {
             <NotificationIcon height={30} width={30} fill="#ffffff" />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.miniIconStyle}>
+          <TouchableOpacity style={styles.miniIconStyle} onPress={() => navigation.navigate('ProfilePage')}>
             <ProfileIcon height={30} width={30} fill="#ffffff" />
           </TouchableOpacity>
         </View>
@@ -75,20 +63,23 @@ const HomeScreen = ({ navigation }) => {
 
       <View style={styles.headerContainer}>
         <TouchableOpacity
-          style={[{ backgroundColor: backgroundColor1 }, styles.button]}
+          style={[
+            { backgroundColor: activeButton === 'home' ? '#52CB5E' : '#ffffff' },
+            styles.button,
+          ]}
           activeOpacity={0.7}
-          onPress={HomeButtonPress}
+          onPress={() => handleButtonPress('home')}
         >
           <Text style={styles.buttonText}>Home</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={[
-            { backgroundColor: backgroundColor2 },
+            { backgroundColor: activeButton === 'feeds' ? '#52CB5E' : '#ffffff' },
             styles.button,
           ]}
           activeOpacity={0.7}
-          onPress={FeedsButtonPress}
+          onPress={() => handleButtonPress('feeds')}
         >
           <Text style={styles.buttonText}>Feeds</Text>
         </TouchableOpacity>
