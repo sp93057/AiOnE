@@ -3,6 +3,7 @@ import {
     Text,
     View,
     TouchableOpacity,
+    Linking
 } from 'react-native';
 
 import {
@@ -13,15 +14,28 @@ import {
     BusIcon,
     ParkingIcon,
     OthersIcon,
+    StationaryLogo
 } from 'svg';
 
 import styles from '../styles/Homescreen.styles.js';
 
 
 const HomeButtons = ({ navigation }) => {
+
+    
+    const handlePress = () => {
+        const address = 'SAP LABS, 138, SAP Labs Rd, Whitefield, EPIP Zone, Bengaluru, Karnataka 560066';
+        const url = Platform.select({
+          ios: `http://maps.apple.com/?address=${encodeURIComponent(address)}`,
+          android: `http://maps.google.com/?q=${encodeURIComponent(address)}`,
+        });
+        Linking.openURL(url);
+      };
+
+
     return (
         <View>
-            <TouchableOpacity style={styles.tiles} activeOpacity={0.7}>
+            <TouchableOpacity style={styles.tiles} activeOpacity={0.7} onPress={handlePress}>
                 <View style={styles.miniContainer}>
                     <NavigationIcon height={50} width={50} />
                 </View>
@@ -48,6 +62,13 @@ const HomeButtons = ({ navigation }) => {
                     <FoodIcon height={50} width={50} />
                 </View>
                 <Text style={styles.tilesText}>Food Joint</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.tiles} activeOpacity={0.7}>
+                <View style={styles.miniContainer}>
+                    <StationaryLogo height={50} width={50} />
+                </View>
+                <Text style={styles.tilesText}>Office Supplies</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.tiles} activeOpacity={0.7}>

@@ -6,6 +6,7 @@ import ScanQRScreen from './src/components/ScanQRScreen';
 import HomeButtons from './src/components/HomeButtons';
 import SplashScreen from './src/components/SplashScreen';
 import ProfilePage from './src/components/ProfilePage';
+import InfoScreen from './src/components/InfoScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { Animated } from 'react-native';
@@ -39,9 +40,10 @@ const App = () => {
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Sidebar" component={SidebarScreen}/>
-        <Stack.Screen name ="HomeButtons" component={HomeButtons}/>
+        <Stack.Screen name="HomeButtons" component={HomeButtons}/>
         <Stack.Screen name="QRScanner" component={ScanQRScreen}/>
-        <Stack.Screen name = "ProfilePage" component = {ProfilePage}/>
+        <Stack.Screen name="ProfilePage" component = {ProfilePage}/>
+        <Stack.Screen name="InfoPage" component = {InfoScreen}/>
       </Stack.Navigator>
       )}
     </NavigationContainer>

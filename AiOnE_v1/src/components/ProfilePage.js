@@ -4,7 +4,8 @@ import {
     StatusBar,
     Text,
     TouchableOpacity,
-    ScrollView
+    ScrollView,
+    Image
 } from 'react-native';
 import { BackIcon } from 'svg';
 
@@ -44,9 +45,12 @@ const ProfilePage = ({ navigation }) => {
                 <Text style={styles.textStyle}>Profile</Text>
             </View>
 
-            <ScrollView style={styles.ScrollContainer}>
+            <ScrollView style={styles.ScrollContainer} showsVerticalScrollIndicator={false}>
                 <View style={styles.ProfileContainer}>
-                    <View style={styles.ImageContainer}></View>
+                    <View style={styles.ImageContainer}>
+                        <Image source={require('../images/pic.jpg')}
+                            style={{ flex: 1, height: 180, width: 120, borderRadius: 12 }}></Image>
+                    </View>
                     <View style={styles.topTileTextContainer}>
                         <Text style={styles.nameText}>David Wallace</Text>
                         <Text style={styles.miniHeadingText}>I-Number</Text>

@@ -16,4 +16,5 @@ export {default as ChangePwdIcon} from './lock-2-line.svg';
 export {default as ContactIcon} from './phone-line.svg';
 export {default as CloseIcon} from './close-line.svg';
 export {default as BackIcon} from './arrow-left-line.svg';
-export {default as SmallRightArrow} from './arrow-right-s-line.svg'
+export {default as SmallRightArrow} from './arrow-right-s-line.svg';
+export {default as StationaryLogo} from './pencil-ruler-line.svg'

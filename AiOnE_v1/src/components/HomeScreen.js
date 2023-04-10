@@ -47,7 +47,7 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         <View style={styles.iconContainer}>
-          <TouchableOpacity style={styles.miniIconStyle}>
+          <TouchableOpacity style={styles.miniIconStyle} onPress={() => navigation.navigate('InfoPage')}>
             <InformationIcon height={30} width={30} fill="#ffffff" />
           </TouchableOpacity>
 
