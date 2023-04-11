@@ -37,6 +37,7 @@ export default StyleSheet.create({
       borderWidth: 1,
       borderColor: '#ffffff',
       backgroundColor: '#ffffff',
+      color:'#000000',
       fontFamily: 'Poppins-Medium',
       paddingVertical: 7,
       borderRadius: 12,

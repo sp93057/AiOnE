@@ -35,7 +35,7 @@ const HomeButtons = ({ navigation }) => {
 
     return (
         <View>
-            <TouchableOpacity style={styles.tiles} activeOpacity={0.7} onPress={handlePress}>
+            <TouchableOpacity style={styles.tiles} activeOpacity={0.7} onPress={() => navigation.navigate('QRScanner')}>
                 <View style={styles.miniContainer}>
                     <NavigationIcon height={50} width={50} />
                 </View>

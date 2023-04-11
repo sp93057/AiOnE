@@ -108,6 +108,7 @@ const LoginScreen = ({ navigation }) => {
             autoCapitalize="none"
             autoCorrect={false}
             placeholder="Username"
+            placeholderTextColor={'#000000'}
             value={username}
             onChangeText={setUsername}
           />
@@ -125,6 +126,7 @@ const LoginScreen = ({ navigation }) => {
             autoCorrect={false}
             secureTextEntry={true}
             placeholder="Password"
+            placeholderTextColor={'#000000'}
             value={password}
             onChangeText={setPassword}
           />
