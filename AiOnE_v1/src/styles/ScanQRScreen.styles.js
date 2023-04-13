@@ -11,7 +11,6 @@ export default StyleSheet.create({
         flex:1,
         width:'100%',
         padding: 30,
-        marginTop: 50,
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
@@ -56,6 +55,7 @@ export default StyleSheet.create({
           shadowOpacity: 0.25,
           shadowRadius: 3.84,
           elevation: 5,
+          marginTop: 20,
     },
 
     textStyle: {
@@ -64,5 +64,6 @@ export default StyleSheet.create({
         fontSize: 28,
         color: '#000000',
         marginRight: 5,
+        marginTop:20,
     },
 });

@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
 export default StyleSheet.create({
     mainContainer: {
-      height: '100%',
+      flexGrow:1,
       paddingHorizontal: 30,
-      paddingTop: 80,
-      paddingBottom: 40,
+      justifyContent:"center",
+      alignItems:"center",
       backgroundColor: '#432344',
     },
   
@@ -12,7 +12,7 @@ export default StyleSheet.create({
       fontFamily: 'Poppins-SemiBold',
       fontSize: 32,
       color: '#ffffff',
-      paddingTop: 40,
+      paddingTop: 20,
       paddingBottom: 20,
       alignSelf: 'center',
     },
@@ -37,6 +37,7 @@ export default StyleSheet.create({
       borderWidth: 1,
       borderColor: '#ffffff',
       backgroundColor: '#ffffff',
+      color:'#000000',
       fontFamily: 'Poppins-Medium',
       paddingVertical: 7,
       borderRadius: 12,

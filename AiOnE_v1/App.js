@@ -7,6 +7,7 @@ import HomeButtons from './src/components/HomeButtons';
 import SplashScreen from './src/components/SplashScreen';
 import ProfilePage from './src/components/ProfilePage';
 import InfoScreen from './src/components/InfoScreen';
+import FeedbackFormPage from './src/components/FeedbackFormPage';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { Animated } from 'react-native';
@@ -44,6 +45,7 @@ const App = () => {
         <Stack.Screen name="QRScanner" component={ScanQRScreen}/>
         <Stack.Screen name="ProfilePage" component = {ProfilePage}/>
         <Stack.Screen name="InfoPage" component = {InfoScreen}/>
+        <Stack.Screen name="FeedbackForm" component = {FeedbackFormPage}/>
       </Stack.Navigator>
       )}
     </NavigationContainer>
