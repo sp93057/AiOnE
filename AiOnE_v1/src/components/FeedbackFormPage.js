@@ -7,11 +7,11 @@ import {
     Alert,
     RadioButton,
     TextInput,
-    CheckBox
 } from 'react-native';
 import { BackIcon } from 'svg';
 
 import styles from '../styles/FeedbackFormPage.style.js'
+import CheckBox from '@react-native-community/checkbox';
 
 const FeedbackFormPage = ({ navigation }) => {
 
@@ -65,15 +65,14 @@ const FeedbackFormPage = ({ navigation }) => {
                 />
 
                 <View style={styles.checkboxContainer}>
+                    <Text>Feedback</Text>
                     <CheckBox
-                        title="Feedback"
-                        checked={false}
-                        onPress={() => { }}
+                        value={false}
                     />
+                    
+                    <Text>Assistance</Text>
                     <CheckBox
-                        title="Assistance"
-                        checked={false}
-                        onPress={() => { }}
+                        value={false}
                     />
                 </View>
 

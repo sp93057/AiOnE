@@ -12,7 +12,7 @@ import { ScrollView } from 'react-native';
 
 import { CameraScreen } from 'react-native-camera-kit';
 
-import styles from '../styles/ScanQRScreen.styles.js'
+import styles from '../styles/ScanQRScreen.styles.js';
 
 const ScanQRScreen = ({ navigation }) => {
 

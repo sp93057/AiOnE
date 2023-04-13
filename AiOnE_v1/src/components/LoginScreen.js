@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import {
   Text,
   View,
+  ScrollView,
   Image,
   TextInput,
   StatusBar,
   TouchableOpacity,
   Alert,
+  ActivityIndicator,
 } from 'react-native';
 import { Mail, Lock, ArrowRight } from 'svg';
 import styles from '../styles/Loginscreen.styles.js';
@@ -19,6 +21,8 @@ const auth = getAuth();
 const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  const [loading, setLoading] = useState(false);
 
   /* -------------Login procedure using Github API ------------------------ 
   const submitData = () => {
@@ -57,22 +61,26 @@ const LoginScreen = ({ navigation }) => {
 
   /*----------------Login using Firebase Authentication service---------------*/
   const handleLogin = () => {
+    setLoading(true);
     signInWithEmailAndPassword(auth, username, password)
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
         setUsername('');
         setPassword('');
+        setLoading(false);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         if (username === '' && password === '') {
           Alert.alert("Enter credentials");
+          setLoading(false);
         } else {
           Alert.alert(errorMessage);
           setPassword('');
           setUsername('');
+          setLoading(false);
         }
       });
   }
@@ -92,7 +100,7 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     /*this is the main container of the login page*/
-    <View style={styles.mainContainer}>
+    <ScrollView contentContainerStyle={styles.mainContainer} showsVerticalScrollIndicator={false}>
       <StatusBar translucent backgroundColor={'transparent'} />
       <Image source={require('../images/logo.png')} style={styles.imageStyle} />
 
@@ -108,7 +116,7 @@ const LoginScreen = ({ navigation }) => {
             autoCapitalize="none"
             autoCorrect={false}
             placeholder="Username"
-            placeholderTextColor={'#000000'}
+            placeholderTextColor={'#aaaaaa'}
             value={username}
             onChangeText={setUsername}
           />
@@ -126,7 +134,7 @@ const LoginScreen = ({ navigation }) => {
             autoCorrect={false}
             secureTextEntry={true}
             placeholder="Password"
-            placeholderTextColor={'#000000'}
+            placeholderTextColor={'#aaaaaa'}
             value={password}
             onChangeText={setPassword}
           />
@@ -157,7 +165,14 @@ const LoginScreen = ({ navigation }) => {
         <Text style={styles.buttonText}>Login via SSO</Text>
         <ArrowRight height={24} width={24} />
       </TouchableOpacity>
-    </View>
+
+      {loading && (
+      <View style={styles.spinnerContainer}>
+        <ActivityIndicator size="large" color="#ffffff" />
+      </View>
+    )}
+
+    </ScrollView>
   );
 };
 
