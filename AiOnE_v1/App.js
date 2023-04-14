@@ -11,11 +11,12 @@ import FeedbackFormPage from './src/components/FeedbackFormPage';
 import ChangePasswordScreen from './src/components/ChangePasswordScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import { Animated } from 'react-native';
+import { Animated, LogBox } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
+  LogBox.ignoreAllLogs();
 
   const [isLoading, setIsLoading] = React.useState(true);
   const opacity = React.useRef(new Animated.Value(1)).current;
