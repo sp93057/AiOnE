@@ -8,6 +8,7 @@ import SplashScreen from './src/components/SplashScreen';
 import ProfilePage from './src/components/ProfilePage';
 import InfoScreen from './src/components/InfoScreen';
 import FeedbackFormPage from './src/components/FeedbackFormPage';
+import ChangePasswordScreen from './src/components/ChangePasswordScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { Animated } from 'react-native';
@@ -26,7 +27,7 @@ const App = () => {
         duration: 500,
         useNativeDriver: true,
       }).start(() => setIsLoading(false));
-    }, 2000); // delay for 2 seconds
+    }, 4000); // delay for 2 seconds
   }, []);
 
 
@@ -46,6 +47,7 @@ const App = () => {
         <Stack.Screen name="ProfilePage" component = {ProfilePage}/>
         <Stack.Screen name="InfoPage" component = {InfoScreen}/>
         <Stack.Screen name="FeedbackForm" component = {FeedbackFormPage}/>
+        <Stack.Screen name="ChangePassword" component = {ChangePasswordScreen}/>
       </Stack.Navigator>
       )}
     </NavigationContainer>

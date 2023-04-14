@@ -32,6 +32,10 @@ const SidebarScreen = ({ navigation }) => {
       });
   };
 
+  const changePassword = () => {
+    navigation.navigate('ChangePassword');
+  }
+
 
   return (
     <View style={styles.mainContainer}>
@@ -52,7 +56,7 @@ const SidebarScreen = ({ navigation }) => {
           <Text style={styles.tilesText}>Profile</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.tiles} activeOpacity={0.2}>
+        <TouchableOpacity style={styles.tiles} activeOpacity={0.2} onPress={() => navigation.navigate('ChangePassword')}>
           <View style={styles.miniContainer}>
             <ChangePwdIcon height={30} width={30} fill="#ffffff" />
           </View>

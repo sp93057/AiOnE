@@ -72,7 +72,7 @@ const ProfilePage = ({ navigation }) => {
                 </View>
 
                 <View style={styles.ButtonContainer}>
-                    <TouchableOpacity style={styles.button} activeOpacity={0.7}>
+                    <TouchableOpacity style={styles.button} activeOpacity={0.7} onPress={() => navigation.navigate('ChangePassword')}>
                         <Text style={styles.buttonText}> Change Password</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button} activeOpacity={0.7}>
