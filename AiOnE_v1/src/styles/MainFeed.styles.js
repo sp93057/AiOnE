@@ -1,12 +1,11 @@
 import { StyleSheet } from "react-native";
 export default StyleSheet.create({
     mainContainer: {
-      height: '100%',
+      width:'100%',
       backgroundColor: '#e8e8e8',
-      justifyContent: 'flex-start',
+      justifyContent: 'center',
       alignItems: 'center',
       flexDirection: 'column',
-      margin: 15,
     },
   
     innerContainer: {
@@ -44,12 +43,6 @@ export default StyleSheet.create({
   
     contentContainer: {
       flex: 4
-    },
-  
-    imageStyle: {
-      width: 263,
-      height: 141,
-      alignSelf: 'center',
     },
   });
     

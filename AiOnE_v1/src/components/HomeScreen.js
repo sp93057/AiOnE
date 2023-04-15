@@ -37,7 +37,7 @@ const HomeScreen = ({ navigation }) => {
   };
 
   return (
-    <View backgroundColor="#e8e8e8" height="100%">
+    <View style={styles.mainContainer}>
       <StatusBar translucent backgroundColor={'transparent'} />
       <View style={styles.topContainer}>
         <View style={styles.sidebarContainer}>
@@ -85,7 +85,7 @@ const HomeScreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-      <ScrollView>
+      <ScrollView style={styles.scrollContainer}>
         {renderComponent()}
       </ScrollView>
 

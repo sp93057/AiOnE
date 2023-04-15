@@ -16,7 +16,19 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
-        backgroundColor: '#E8E8E8'
+    },
+
+    bodyContainer: {
+        flex:1,
+        flexGrow:5,
+        marginTop:15,
+    },
+
+    bottomContainer: {
+        flex:1,
+        justifyContent:"center",
+        alignItems:"center",
+        backgroundColor: '#000fff'
     },
 
     backButton: {
@@ -46,15 +58,15 @@ export default StyleSheet.create({
     },
 
     ProfileContainer: {
-        flex: 3,
-        width: '100%',
-        height: 200,
-        backgroundColor: '#ffffff',
-        alignItems: "center",
-        borderRadius: 12,
-        marginBottom: 20,
-        padding: 10,
         flexDirection: "row",
+        width: '100%',
+        height: 300,
+        backgroundColor: '#ffffff',
+        borderRadius: 12,
+        justifyContent: "flex-start",
+        alignItems: "center",
+        paddingLeft: 40,
+        marginBottom:20,
         shadowOffset: {
             width: 0,
             height: 2,
@@ -62,20 +74,16 @@ export default StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
-        alignItems: 'center',
-        justifyContent: 'center',
     },
 
     FormContainer: {
-        flex: 3,
         width: '100%',
         height: 250,
         backgroundColor: '#ffffff',
-        alignItems: "center",
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
         borderRadius: 12,
-        marginBottom: 20,
-        padding: 10,
-        flexDirection: "row",
+        padding: 20,
         shadowOffset: {
             width: 0,
             height: 2,
@@ -83,7 +91,7 @@ export default StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
-        flexDirection: "column",
+        marginBottom:20,
     },
 
     topTileTextContainer: {
@@ -126,7 +134,7 @@ export default StyleSheet.create({
       button: {
         backgroundColor: '#007bff',
         height: 50,
-        width: 100,
+        width: 120,
         backgroundColor: "#52CB5E",
         borderRadius: 12,
         justifyContent: 'center',
@@ -140,8 +148,72 @@ export default StyleSheet.create({
       },
 
       checkboxContainer: {
+        width: '100%',
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'flex-start',
       },
+
+      pickerStyle: {
+        width: '100%',
+        height: 50,
+        backgroundColor: '#ffffff',
+        borderRadius: 12,
+        borderColor: '#000000',
+        borderWidth: 2,
+        justifyContent: "center",
+        marginBottom: 25,
+      },
+
+      pickerText: {
+        fontFamily: 'Poppins-Bold',
+        fontSize: 16,
+        color: '#ffffff'
+      },
+
+      pickerHeadingText: {
+        fontFamily: 'Poppins-SemiBold',
+        fontSize: 16,
+        color: '#000000',
+        margin: 5,
+    },
+
+    descriptionBox: {
+        width: '100%',
+        height: 100,
+        backgroundColor: '#ffffff',
+        borderRadius: 12,
+        borderColor: '#000000',
+        borderWidth: 2,
+        marginBottom: 25,
+        overflow: 'hidden',
+    },
+
+    feedbackDescStyle: {
+        width: '100%',
+        height: 100,
+    },
+
+    DescriptionContainer: {
+        width: '100%',
+        height: 200,
+        backgroundColor: '#ffffff',
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+        borderRadius: 12,
+        padding: 20,
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+        marginBottom:20,
+    },
+
+    submitButton: {
+        justifyContent: "center",
+        alignItems: "center"
+    }
 });
