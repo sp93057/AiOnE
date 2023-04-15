@@ -25,7 +25,7 @@ const LoginScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(false);
 
   /* -------------Login procedure using Github API ------------------------ 
-  const submitData = () => {
+  const handleLogin = () => {
     fetch(
       'https://raw.githubusercontent.com/sp93057/AiOne_DB/main/login_creds.json',
     )

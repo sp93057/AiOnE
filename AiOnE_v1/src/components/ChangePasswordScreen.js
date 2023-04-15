@@ -13,6 +13,9 @@ import {
 } from "react-native";
 import { BackIcon, Lock } from 'svg';
 import styles from '../styles/ChangePasswordScreen.styles'
+import { getAuth, signOut } from "firebase/auth";
+
+const auth = getAuth();
 
 const ChangePasswordScreen = ({ navigation }) => {
     const [currentPass, setCurrentPass] = useState('');
@@ -24,7 +27,7 @@ const ChangePasswordScreen = ({ navigation }) => {
             // check for old password match and show the firebase alert
             // get the data needed like email to hit firebase
             // pass all the data with new pass
-            
+
             // pop-up of password upadte and navigate to login page when pressed ok
             // Alert.alert("Password Updated!", "Please login again with new password.", [
             //     {
@@ -39,10 +42,17 @@ const ChangePasswordScreen = ({ navigation }) => {
             // ]);
 
             // OR
-            navigation.navigate('Login');
+            signOut(auth)
+                .then(() => {
+                    // Successfully signed out
+                    navigation.reset({
+                        index: 0,
+                        routes: [{ name: 'Login' }],
+                    });
+                })
             if (Platform.OS === 'android') {
                 ToastAndroid.show("Password Updated Sucessfully!", ToastAndroid.LONG);
-            } else if (Platform.OS === 'ios'){
+            } else if (Platform.OS === 'ios') {
                 AlertIOS.alert("Password Updated Sucessfully!");
             }
         }
