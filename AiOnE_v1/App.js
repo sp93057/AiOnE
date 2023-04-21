@@ -1,4 +1,9 @@
 import React, {useEffect} from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { Animated, LogBox } from 'react-native';
+
+// importing components and screens
 import LoginScreen from './src/components/LoginScreen';
 import HomeScreen from './src/components/HomeScreen';
 import SidebarScreen from './src/components/SidebarScreen';
@@ -10,9 +15,7 @@ import InfoScreen from './src/components/InfoScreen';
 import FeedbackFormPage from './src/components/FeedbackFormPage';
 import ChangePasswordScreen from './src/components/ChangePasswordScreen';
 import ParkingPage from './src/components/ParkingScreen';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import { Animated, LogBox } from 'react-native';
+import RecentFeeds from './src/components/RecentFeeds';
 
 const Stack = createNativeStackNavigator();
 
@@ -51,6 +54,7 @@ const App = () => {
         <Stack.Screen name="FeedbackForm" component = {FeedbackFormPage}/>
         <Stack.Screen name="ChangePassword" component = {ChangePasswordScreen}/>
         <Stack.Screen name = "Parking" component = {ParkingPage}/>
+        <Stack.Screen name = "RecentFeeds" component = {RecentFeeds}/>
       </Stack.Navigator>
       )}
     </NavigationContainer>

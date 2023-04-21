@@ -32,7 +32,6 @@ const HomeButtons = ({ navigation }) => {
         Linking.openURL(url);
       };
 
-
     return (
         <View>
             <TouchableOpacity style={styles.tiles} activeOpacity={0.7} onPress={handlePress}>
@@ -50,7 +49,7 @@ const HomeButtons = ({ navigation }) => {
                 <Text style={styles.tilesText}>Scan</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.tiles} activeOpacity={0.7}>
+            <TouchableOpacity style={styles.tiles} activeOpacity={0.7} onPress={() => navigation.navigate('RecentFeeds')}>
                 <View style={styles.miniContainer}>
                     <FeedIcon height={50} width={50} />
                 </View>
