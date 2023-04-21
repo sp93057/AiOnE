@@ -19,7 +19,7 @@ build:
     - name: Build
       run: |
         cd .\AiOnE_v1\
-        npx react-native start
+        npm start
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
