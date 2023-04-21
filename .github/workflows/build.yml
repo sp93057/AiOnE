@@ -13,9 +13,9 @@ build:
     - name: Checkout code
       uses: actions/checkout@v3
     - name: Install dependencies
-      run: |
-        cd .\AiOnE_v1\
-        npm install
+      run: npm install
+    - name: Build
+      run: npm start
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
