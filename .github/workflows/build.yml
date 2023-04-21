@@ -6,16 +6,20 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  build:
+build:
+    name: Build_Check
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
     - name: Install dependencies
-      run: npm install
+      run: |
+        cd .\AiOnE_v1\
+        npm install
     - name: Build
       run: |
-        npx react-native run-android
+        cd .\AiOnE_v1\
+        npx react-native start
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
