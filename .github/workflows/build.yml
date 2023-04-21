@@ -16,9 +16,6 @@ build:
       run: |
         cd .\AiOnE_v1\
         npm install
-    - name: Build
-      run: |
-        npm start
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
