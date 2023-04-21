@@ -18,7 +18,6 @@ build:
         npm install
     - name: Build
       run: |
-        cd .\AiOnE_v1\
         npm start
   sonarcloud:
     name: SonarCloud
