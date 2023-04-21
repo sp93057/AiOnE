@@ -9,6 +9,7 @@ import ProfilePage from './src/components/ProfilePage';
 import InfoScreen from './src/components/InfoScreen';
 import FeedbackFormPage from './src/components/FeedbackFormPage';
 import ChangePasswordScreen from './src/components/ChangePasswordScreen';
+import ParkingPage from './src/components/ParkingScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { Animated, LogBox } from 'react-native';
@@ -49,6 +50,7 @@ const App = () => {
         <Stack.Screen name="InfoPage" component = {InfoScreen}/>
         <Stack.Screen name="FeedbackForm" component = {FeedbackFormPage}/>
         <Stack.Screen name="ChangePassword" component = {ChangePasswordScreen}/>
+        <Stack.Screen name = "Parking" component = {ParkingPage}/>
       </Stack.Navigator>
       )}
     </NavigationContainer>

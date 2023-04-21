@@ -78,7 +78,7 @@ const HomeButtons = ({ navigation }) => {
                 <Text style={styles.tilesText}>Bus Routes</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.tiles} activeOpacity={0.7}>
+            <TouchableOpacity style={styles.tiles} activeOpacity={0.7} onPress={() => navigation.navigate('Parking')}>
                 <View style={styles.miniContainer}>
                     <ParkingIcon height={50} width={50} />
                 </View>
