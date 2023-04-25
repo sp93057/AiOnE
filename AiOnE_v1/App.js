@@ -16,6 +16,7 @@ import FeedbackFormPage from './src/components/FeedbackFormPage';
 import ChangePasswordScreen from './src/components/ChangePasswordScreen';
 import ParkingPage from './src/components/ParkingScreen';
 import RecentFeeds from './src/components/RecentFeeds';
+import OtherServicesScreen from './src/components/OtherServicesScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -55,6 +56,7 @@ const App = () => {
         <Stack.Screen name="ChangePassword" component = {ChangePasswordScreen}/>
         <Stack.Screen name = "Parking" component = {ParkingPage}/>
         <Stack.Screen name = "RecentFeeds" component = {RecentFeeds}/>
+        <Stack.Screen name = "OtherServices" component = {OtherServicesScreen}/>
       </Stack.Navigator>
       )}
     </NavigationContainer>
