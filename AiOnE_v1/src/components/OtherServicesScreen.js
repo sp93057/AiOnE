@@ -28,25 +28,25 @@ const OtherServicesScreen = ({ navigation }) => {
             <ScrollView>
                 <View style={styles.bodyContainer}>
                     <View style={styles.itemContainer}>
-                        <TouchableOpacity style={styles.item} onPress={() => console.log('Pressed item 1')}>
+                        <TouchableOpacity style={styles.item} activeOpacity={0.7} onPress={() => console.log('Pressed item 1')}>
                             <Image source={require('../images/gym.png')} style={[styles.imageStyle, { transform: [{ rotate: '135deg' }] }]} />
                         </TouchableOpacity>
                         <Text style={styles.text}>Gym</Text>
                     </View>
                     <View style={styles.itemContainer}>
-                        <TouchableOpacity style={styles.item} onPress={() => console.log('Pressed item 2')}>
+                        <TouchableOpacity style={styles.item} activeOpacity={0.7} onPress={() => console.log('Pressed item 2')}>
                             <Image source={require('../images/library.png')} style={styles.imageStyle} />
                         </TouchableOpacity>
                         <Text style={styles.text}>Library</Text>
                     </View>
                     <View style={styles.itemContainer}>
-                        <TouchableOpacity style={styles.item} onPress={() => console.log('Pressed item 3')}>
+                        <TouchableOpacity style={styles.item} activeOpacity={0.7} onPress={() => console.log('Pressed item 3')}>
                             <Image source={require('../images/sports.png')} style={styles.imageStyle} />
                         </TouchableOpacity>
                         <Text style={styles.text}>Games</Text>
                     </View>
                     <View style={styles.itemContainer}>
-                        <TouchableOpacity style={styles.item} onPress={() => console.log('Pressed item 4')}>
+                        <TouchableOpacity style={styles.item} activeOpacity={0.7} onPress={() => console.log('Pressed item 4')}>
                             <Image source={require('../images/amenities.png')} style={styles.imageStyle} />
                         </TouchableOpacity>
                         <Text style={styles.text}>Amenities</Text>
