@@ -22,12 +22,14 @@ export default StyleSheet.create({
         width: '100%',
         height: 100,
         backgroundColor: '#ffffff',
+        justifyContent: "flex-start",
         alignItems: "center",
         borderRadius: 12,
         marginBottom: 20,
-        paddingLeft: 10,
-        paddingRight: 20,
+        paddingLeft:10,
+        paddingRight: 10,
         flexDirection: "row",
+        overflow: "hidden",
         shadowOffset: {
             width: 0,
             height: 2,
@@ -38,9 +40,24 @@ export default StyleSheet.create({
     },
 
     ImageContainer: {
+        flex:1,
         height: 70,
         width: 70,
-        marginRight: 15
+        marginRight:15,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+
+    ImageStyle: {
+        height: 70, 
+        width: 70, 
+        borderRadius: 35 
+    },
+
+    TextContainer: {
+        flex:3,
+        width: '100%',
+        height: 80,
     },
 
     backButton: {
@@ -78,8 +95,4 @@ export default StyleSheet.create({
         fontSize: 10,
         color: '#8A8A8A'
     },
-
-    descContainer: {
-        marginRight: 60
-    }
 });
