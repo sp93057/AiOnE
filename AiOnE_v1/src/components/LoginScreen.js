@@ -154,13 +154,6 @@ const LoginScreen = ({ navigation }) => {
         <Text style={styles.forgotPassText}>Forgot Password</Text>
       </TouchableOpacity>
 
-      <View
-        style={[
-          styles.inputContainer,
-          { borderBottomColor: '#ffffff', borderBottomWidth: 1 },
-        ]}
-      />
-
       <TouchableOpacity style={styles.button} activeOpacity={0.9}>
         <Text style={styles.buttonText}>Login via SSO</Text>
         <ArrowRight height={24} width={24} />
