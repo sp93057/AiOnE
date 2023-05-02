@@ -24,9 +24,8 @@ export default StyleSheet.create({
     ProfileContainer: {
         flex: 5,
         width: '100%',
-        height: 250,
+        alignSelf: "flex-start",
         backgroundColor: '#ffffff',
-        alignItems: "center",
         borderRadius: 12,
         marginBottom: 20,
         padding: 10,
@@ -41,16 +40,16 @@ export default StyleSheet.create({
     },
 
     ImageContainer: {
-        height: 180,
+        height:'100%',
         width: 120,
         borderRadius: 12,
         marginRight: 15
     },
 
     topTileTextContainer: {
-        height: 180,
+        flex:1,
         justifyContent:"center",
-        alignItems: "flex-start"
+        alignItems: "flex-start",
     },
 
     ButtonContainer: {
@@ -67,7 +66,7 @@ export default StyleSheet.create({
     AddressContainer: {
         flex: 4,
         width: '100%',
-        height: 200,
+        alignSelf: "flex-start",
         backgroundColor: '#ffffff',
         justifyContent: "center",
         marginBottom: 30,
@@ -110,7 +109,7 @@ export default StyleSheet.create({
         fontFamily: 'Poppins-SemiBold',
         fontSize: 20,
         color: '#000000',
-        marginBottom: 10
+        marginBottom: 10,
     },
 
     miniHeadingText: {
