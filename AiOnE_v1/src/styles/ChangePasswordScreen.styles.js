@@ -2,15 +2,17 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
     mainContainer: {
       backgroundColor: '#E8E8E8',
-      height: '100%',
-      width: '100%',
+      flexGrow:1,
+      justifyContent: "center",
       alignItems: 'center',
     },
 
-    headerText: {
+    textStyle: {
+        marginLeft: 20,
         fontFamily: 'Poppins-Bold',
         fontSize: 28,
         color: '#000000',
+        marginRight: 5,
     },
 
     headingContainer: {
@@ -18,20 +20,27 @@ export default StyleSheet.create({
     },
 
     topContainer: {
+        flex:1,
         width: '100%',
         marginTop: 50,
-        marginBottom: 40,
+        padding: 30,
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
         backgroundColor: 'transparent'
     },
 
+    middleContainer: {
+        flex:9,
+        backgroundColor: 'transparent',
+        width: '100%',
+        justifyContent: "center",
+        alignItems: "center"
+    },
+
     backButton: {
         height: 50,
         width: 50,
-        marginTop: 20,
-        marginLeft: 10,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#ffffff',
@@ -53,6 +62,13 @@ export default StyleSheet.create({
         borderRadius: 12,
         alignSelf: 'center',
         flexDirection: 'row',
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
       },
 
       miniContainer: {
@@ -105,14 +121,24 @@ export default StyleSheet.create({
     },
 
     ButtonContainer: {
-        flex: 4,
+        flex: 1,
         width: '100%',
         height: 200,
         backgroundColor: 'transparent',
         justifyContent: "center",
-        marginBottom: 20,
-        borderRadius: 12,
         alignItems: "center"
     },
+
+    spinnerContainer: {
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        backgroundColor: 'rgba(0, 0, 0, 0.7)', // dim out background
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: 1, 
+      },
 
   });
