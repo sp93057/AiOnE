@@ -13,7 +13,7 @@ import {
 import { Mail, Lock, ArrowRight } from 'svg';
 import styles from '../styles/Loginscreen.styles.js';
 import { getAuth, signInWithEmailAndPassword} from "firebase/auth";
-import app from '../../firebaseConfig';
+import {app, storage} from '../../firebaseConfig';
 
 const auth = getAuth();
 
