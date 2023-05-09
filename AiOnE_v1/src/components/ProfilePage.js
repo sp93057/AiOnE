@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     View,
     StatusBar,
@@ -14,8 +14,40 @@ import { getAuth, signOut } from "firebase/auth";
 
 const auth = getAuth();
 
+const profileUrl = "https://raw.githubusercontent.com/Prabhash33/AiOnE_DB/main/details_all.json";
+
 
 const ProfilePage = ({ navigation }) => {
+
+    const user = auth.currentUser;
+    const userId = user.email;
+
+    const [profileData, setProfileData] = useState(null);
+
+    const fetchData = async () => {
+        try {
+            const response = await fetch(profileUrl);
+            const data = await response.json();
+            for (let obj of data) {
+                if (obj.id === userId.split('@')[0]) {
+                    setProfileData(obj);
+                    break;
+                }
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    if (!profileData) {
+        return null; // or you can return a loading indicator
+    }
+
+
 
     const logout = () => {
         signOut(auth)
@@ -49,22 +81,25 @@ const ProfilePage = ({ navigation }) => {
                 <View style={styles.ProfileContainer}>
                     <View style={styles.ImageContainer}>
                         <Image source={require('../images/pic.jpg')}
-                            style={{ flex: 1, height: 180, width: 120, borderRadius: 12 }}></Image>
+                            style={{ flex: 1, height: '100%', width: 120, borderRadius: 12, justifyContent: 'flex-end' }}></Image>
                     </View>
                     <View style={styles.topTileTextContainer}>
-                        <Text style={styles.nameText}>David Wallace</Text>
+                        <Text style={styles.nameText}>{profileData.name}</Text>
                         <Text style={styles.miniHeadingText}>I-Number</Text>
-                        <Text style={styles.miniValueText}>I123456</Text>
+                        <Text style={styles.miniValueText}>{profileData.id}</Text>
                         <Text style={styles.miniHeadingText}>Email</Text>
-                        <Text style={styles.miniValueText}>david01@company.com</Text>
+                        <Text style={styles.miniValueText}>{profileData.email}</Text>
                         <Text style={styles.miniHeadingText}>Contact No.</Text>
-                        <Text style={styles.miniValueText}>+91 9987643423</Text>
+                        <Text style={styles.miniValueText}>{profileData.phone}</Text>
+                        
                     </View>
                 </View>
 
                 <View style={styles.AddressContainer}>
-                    <Text style={styles.miniHeadingText}>Office Address:</Text>
-                    <Text style={styles.miniValueText}>Whitefield, Bengaluru</Text>
+                    <Text style={styles.miniHeadingText}>Address:</Text>
+                    <Text style={styles.miniValueText}>{profileData.address}</Text>
+                    <Text style={styles.miniHeadingText}>Blood Group:</Text>
+                    <Text style={styles.miniValueText}>{profileData.blood}</Text>
                     <Text style={styles.miniHeadingText}>Reports To:</Text>
                     <Text style={styles.miniValueText}>Michael Scott</Text>
                     <Text style={styles.miniHeadingText}>Period of Service</Text>

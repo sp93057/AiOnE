@@ -13,7 +13,7 @@ import {
 import { Mail, Lock, ArrowRight } from 'svg';
 import styles from '../styles/Loginscreen.styles.js';
 import { getAuth, signInWithEmailAndPassword} from "firebase/auth";
-import app from '../../firebaseConfig';
+import {app, storage} from '../../firebaseConfig';
 
 const auth = getAuth();
 
@@ -153,13 +153,6 @@ const LoginScreen = ({ navigation }) => {
       <TouchableOpacity style={styles.inputContainer} activeOpacity={0.7}>
         <Text style={styles.forgotPassText}>Forgot Password</Text>
       </TouchableOpacity>
-
-      <View
-        style={[
-          styles.inputContainer,
-          { borderBottomColor: '#ffffff', borderBottomWidth: 1 },
-        ]}
-      />
 
       <TouchableOpacity style={styles.button} activeOpacity={0.9}>
         <Text style={styles.buttonText}>Login via SSO</Text>
