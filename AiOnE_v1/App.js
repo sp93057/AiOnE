@@ -17,6 +17,7 @@ import ChangePasswordScreen from './src/components/ChangePasswordScreen';
 import ParkingPage from './src/components/ParkingScreen';
 import RecentFeeds from './src/components/RecentFeeds';
 import OtherServicesScreen from './src/components/OtherServicesScreen';
+import FoodJointOptionsScreen from './src/components/FoodJointOptionsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -57,6 +58,7 @@ const App = () => {
         <Stack.Screen name = "Parking" component = {ParkingPage}/>
         <Stack.Screen name = "RecentFeeds" component = {RecentFeeds}/>
         <Stack.Screen name = "OtherServices" component = {OtherServicesScreen}/>
+        <Stack.Screen name = "FoodJointOptions" component = {FoodJointOptionsScreen}/>
       </Stack.Navigator>
       )}
     </NavigationContainer>
