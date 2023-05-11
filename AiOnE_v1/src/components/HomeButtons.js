@@ -56,7 +56,7 @@ const HomeButtons = ({ navigation }) => {
                 <Text style={styles.tilesText}>Recent Feed</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.tiles} activeOpacity={0.7}>
+            <TouchableOpacity style={styles.tiles} activeOpacity={0.7} onPress={() => navigation.navigate('FoodJointOptions')}>
                 <View style={styles.miniContainer}>
                     <FoodIcon height={50} width={50} />
                 </View>
