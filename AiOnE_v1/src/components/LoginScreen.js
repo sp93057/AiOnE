@@ -150,7 +150,7 @@ const LoginScreen = ({ navigation }) => {
         <ArrowRight height={24} width={24} />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.inputContainer} activeOpacity={0.7}>
+      <TouchableOpacity style={styles.inputContainer} activeOpacity={0.7} onPress={() => navigation.navigate('ForgotPassword')}>
         <Text style={styles.forgotPassText}>Forgot Password</Text>
       </TouchableOpacity>
 

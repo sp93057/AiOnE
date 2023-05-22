@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { FlatList, Text, View, StatusBar, TouchableOpacity, ScrollView, Image } from 'react-native';
 import styles from '../styles/RecentFeeds.styles';
 import { BackIcon } from 'svg';
@@ -15,6 +15,9 @@ const img = (deptNo) => {
 
         case "03":
             return require('../images/seminar.jpg');
+        
+        case "04":
+            return require('../images/sapLogo.png');
     }
 };
 
@@ -24,7 +27,7 @@ const RecentFeedsPage = ({ navigation }) => {
     fetch(recentFeedsUrl)
     .then((response) => response.json())
     .then((json) => setData(json))
-    .catch((error) => Alert.alert(error));
+    .catch((error) => console.log(error));
 
     return (
         <View style={styles.mainContainer}>
