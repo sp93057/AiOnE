@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     View,
     StatusBar,
@@ -14,15 +14,31 @@ import styles from '../styles/FoodJointOptionsScreen.styles.js'
 
 const FoodJointOptionsScreen = ({ navigation }) => {
 
+    const url = "https://raw.githubusercontent.com/Prabhash33/AiOnE_DB/main/foodJointData.json";
+    const [data, setData] = useState([]);
+
     menuDisplay = (cafeCode) => {
         fetch(url)
           .then(response => response.json())
-          .then(data => {
+          .then(json => {
             // Filter the data based on the text name of the touchable opacity that was pressed
-            const filteredData = data.filter(item => item.name === cafeCode);
+            // const filteredData = json.filter(item => item.name === cafeCode);
             
             // Pass the filtered data to your custom page
-            navigateToCustomPage(filteredData);
+            // console.log(json);
+
+            setData(json);
+            let cafeObj = null;
+
+            switch(cafeCode) {
+                case 'Metro_Joint':
+                    cafeObj = data.Metro_Joint;
+                case 'Clubhouse':
+                    cafeObj = data.Clubhouse;
+            }
+
+            console.log(cafeObj);
+
           })
           .catch(error => console.error(error));
       }
@@ -41,7 +57,7 @@ const FoodJointOptionsScreen = ({ navigation }) => {
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.bodyContainer}>
                     <View style={styles.itemContainer}>
-                        <TouchableOpacity style={styles.item} activeOpacity={0.7} onPress={() => menuDisplay('etro')}>
+                        <TouchableOpacity style={styles.item} activeOpacity={0.7} onPress={() => menuDisplay('Metro_Joint')}>
                             <Image source={require('../images/restaurant.png')} style={styles.imageStyle} />
                         </TouchableOpacity>
                         <Text style={styles.text}>Metro Joint</Text>

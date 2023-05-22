@@ -21,6 +21,7 @@ export default StyleSheet.create({
       shadowOpacity: 0.25,
       shadowRadius: 3.84,
       elevation: 5,
+      overflow: "hidden"
     },
   
     miniHeader: {
@@ -44,5 +45,22 @@ export default StyleSheet.create({
     contentContainer: {
       flex: 4
     },
+
+    miniTextView: {
+      padding: 10,
+      overflow: "hidden"
+    },
+
+    miniTextHeading: {
+      fontFamily: 'Poppins-SemiBold',
+        fontSize: 20,
+        color: '#000000'
+    },
+    
+    miniTextBody: {
+      fontFamily: 'Poppins-SemiBold',
+        fontSize: 14,
+        color: '#8A8A8A'
+    }
   });
     

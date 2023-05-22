@@ -13,40 +13,26 @@ import { SmallRightArrow } from '../svg/index';
 
 import styles from '../styles/MainFeed.styles.js';
 
-const data = [
-  {
-    "dept": "01",
-    "title": "Hive Space",
-    "desc": "Hive at SAP is a group of interested people working together to achieve a common goal. This space is dedicated for all sorts of new innovation and on upcoming modern technologies"
-  },
-  {
-    "dept": "03",
-    "title": "Seminar 1",
-    "desc": "Full day workshop on time management on April 14 at seminar hall"
-  },
-  {
-    "dept": "02",
-    "title": "Events",
-    "desc": "Event organized to talk with the higher management about the scope of the organization"
-  },
-  {
-    "dept": "01",
-    "title": "IoT at HIVE",
-    "desc": "Second event of hive a group of interested people to work on IoT devices and create an organised parking software"
-  },
-  {
-    "dept": "02",
-    "title": "Ted Talk",
-    "desc": "Welcome Prabhash and Swaraj Co-Founders of AiOnE to talk on their journey"
-  },
-  {
-    "dept": "03",
-    "title": "Seminar 2",
-    "desc": "How to work efficiently - get to know from experts"
-  }
-];
+
+const recentFeedsUrl = "https://raw.githubusercontent.com/Prabhash33/AiOnE_DB/main/feeds.json";
+
 
 const MainFeed = () => {
+
+  const [data, setData] = useState([]);
+  fetch(recentFeedsUrl)
+    .then((response) => response.json())
+    .then((json) => setData(json))
+    .catch((error) => console.log(error));
+
+  console.log(data);
+
+  const dept01Data = data.filter(item => item.dept === "01");
+  const dept02Data = data.filter(item => item.dept === "02");
+  const dept03Data = data.filter(item => item.dept === "03");
+  const dept04Data = data.filter(item => item.dept === "04");
+
+
   return (
     <View style={styles.mainContainer}>
       <StatusBar translucent backgroundColor={'transparent'} />
@@ -56,29 +42,14 @@ const MainFeed = () => {
           <SmallRightArrow height={40} width={40} />
         </TouchableOpacity>
         <View style={styles.contentContainer}>
-          <FlatList data={data} renderItem={(element) => {
-            return (
-              <ScrollView>
-                <View style={styles.FeedContainer}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <Text>{element.item.title}: </Text>
-                    <View>
-                      <Text style={styles.descText}> {element.item.desc} </Text>
-                    </View>
-                  </View>
-                  {/* <View style={{flexDirection: 'row'}}>
-                    <Text style={styles.descText}>{element.item.desc.split(".")[0]}</Text>
-                  </View> */}
-                  <View
-                    style={{
-                      borderBottomColor: 'black',
-                      borderBottomWidth: StyleSheet.hairlineWidth,
-                    }}
-                  />
-                </View>
-              </ScrollView>
-            );
-          }} />
+          <ScrollView nestedScrollEnabled={true}>
+            {dept01Data.map(item => (
+              <View style={styles.miniTextView} key={item.title}>
+                <Text style={styles.miniTextHeading}>{item.title}</Text>
+                <Text style={styles.miniTextBody}>{item.desc}</Text>
+              </View>
+            ))}
+          </ScrollView>
         </View>
       </View>
       <View style={styles.innerContainer}>
@@ -87,6 +58,14 @@ const MainFeed = () => {
           <SmallRightArrow height={40} width={40} />
         </TouchableOpacity>
         <View style={styles.contentContainer}>
+          <ScrollView nestedScrollEnabled={true}>
+            {dept02Data.map(item => (
+              <View style={styles.miniTextView} key={item.title}>
+                <Text style={styles.miniTextHeading}>{item.title}</Text>
+                <Text style={styles.miniTextBody}>{item.desc}</Text>
+              </View>
+            ))}
+          </ScrollView>
         </View>
       </View>
       <View style={styles.innerContainer}>
@@ -95,6 +74,14 @@ const MainFeed = () => {
           <SmallRightArrow height={40} width={40} />
         </TouchableOpacity>
         <View style={styles.contentContainer}>
+          <ScrollView nestedScrollEnabled={true}>
+            {dept03Data.map(item => (
+              <View style={styles.miniTextView} key={item.title}>
+                <Text style={styles.miniTextHeading}>{item.title}</Text>
+                <Text style={styles.miniTextBody}>{item.desc}</Text>
+              </View>
+            ))}
+          </ScrollView>
         </View>
       </View>
       <View style={styles.innerContainer}>
@@ -103,6 +90,14 @@ const MainFeed = () => {
           <SmallRightArrow height={40} width={40} />
         </TouchableOpacity>
         <View style={styles.contentContainer}>
+          <ScrollView nestedScrollEnabled={true}>
+            {dept04Data.map(item => (
+              <View style={styles.miniTextView} key={item.title}>
+                <Text style={styles.miniTextHeading}>{item.title}</Text>
+                <Text style={styles.miniTextBody}>{item.desc}</Text>
+              </View>
+            ))}
+          </ScrollView>
         </View>
       </View>
     </View>
