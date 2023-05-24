@@ -63,14 +63,14 @@ const HomeButtons = ({ navigation }) => {
                 <Text style={styles.tilesText}>Food Joint</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.tiles} activeOpacity={0.7}>
+            <TouchableOpacity style={styles.tiles} activeOpacity={0.7} onPress={() => navigation.navigate('StationaryOrder')}>
                 <View style={styles.miniContainer}>
                     <StationaryLogo height={50} width={50} />
                 </View>
                 <Text style={styles.tilesText}>Office Supplies</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.tiles} activeOpacity={0.7}>
+            <TouchableOpacity style={styles.tiles} activeOpacity={0.7}onPress={() => navigation.navigate('QRScanner')}>
                 <View style={styles.miniContainer}>
                     <BusIcon height={50} width={50} />
                 </View>

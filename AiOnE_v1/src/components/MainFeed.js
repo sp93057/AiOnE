@@ -25,8 +25,6 @@ const MainFeed = () => {
     .then((json) => setData(json))
     .catch((error) => console.log(error));
 
-  console.log(data);
-
   const dept01Data = data.filter(item => item.dept === "01");
   const dept02Data = data.filter(item => item.dept === "02");
   const dept03Data = data.filter(item => item.dept === "03");

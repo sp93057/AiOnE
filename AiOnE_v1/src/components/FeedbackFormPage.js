@@ -19,15 +19,15 @@ const FeedbackFormPage = ({ navigation }) => {
     const [selectedLocation, setSelectedLocation] = useState();
     const [isFeedbackChecked, setIsFeedbackChecked] = useState(true);
     const [isAssistanceChecked, setIsAssistanceChecked] = useState(false);
-  
+
     const handleFeedbackCheckbox = () => {
-      setIsFeedbackChecked(true);
-      setIsAssistanceChecked(false);
+        setIsFeedbackChecked(true);
+        setIsAssistanceChecked(false);
     };
-  
+
     const handleAssistanceCheckbox = () => {
-      setIsAssistanceChecked(true);
-      setIsFeedbackChecked(false);
+        setIsAssistanceChecked(true);
+        setIsFeedbackChecked(false);
     };
 
     const handleSubmit = () => {
@@ -79,16 +79,16 @@ const FeedbackFormPage = ({ navigation }) => {
                                 setSelectedLocation(itemValue)
                             }>
                             <Picker.Item label="Bengaluru" value="Bengaluru" color="#000000" />
-                            <Picker.Item label="Pune" value="Pune" color="#000000"/>
-                            <Picker.Item label="Hyderabad" value="Hyderabad" color="#000000"/>
-                            <Picker.Item label="Gurgaon" value="Gurgaon" color="#000000"/>
+                            <Picker.Item label="Pune" value="Pune" color="#000000" />
+                            <Picker.Item label="Hyderabad" value="Hyderabad" color="#000000" />
+                            <Picker.Item label="Gurgaon" value="Gurgaon" color="#000000" />
                         </Picker>
                     </View>
                     <Text style={styles.pickerHeadingText}>Choose your complaint type:</Text>
                     <View style={styles.checkboxContainer}>
-                        <CheckBox value={isFeedbackChecked} onValueChange={handleFeedbackCheckbox}/>
+                        <CheckBox value={isFeedbackChecked} onValueChange={handleFeedbackCheckbox} />
                         <Text style={styles.pickerHeadingText}>Feedback</Text>
-                        <CheckBox value={isAssistanceChecked} onValueChange={handleAssistanceCheckbox}/>
+                        <CheckBox value={isAssistanceChecked} onValueChange={handleAssistanceCheckbox} />
                         <Text style={styles.pickerHeadingText}>Assistance</Text>
                     </View>
                 </View>
@@ -104,9 +104,9 @@ const FeedbackFormPage = ({ navigation }) => {
                 </View>
 
                 <View style={styles.submitButton}>
-                <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-                    <Text style={styles.buttonText}>Submit</Text>
-                </TouchableOpacity>
+                    <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+                        <Text style={styles.buttonText}>Submit</Text>
+                    </TouchableOpacity>
                 </View>
             </ScrollView>
         </View>
