@@ -61,7 +61,7 @@ const StationaryOrderScreen = ({ navigation }) => {
         navigation.reset({
             index: 0,
             routes: [{ name: 'Home' }],
-          })
+        })
     };
 
     return (
@@ -111,9 +111,9 @@ const StationaryOrderScreen = ({ navigation }) => {
                 </View>
 
                 <View style={styles.submitButtonView}>
-                <View style={styles.totalAmountContainer}>
-                    <Text style={styles.totalAmountText}>Total Amount: ₹{totalAmount}</Text>
-                </View>
+                    <View style={styles.totalAmountContainer}>
+                        <Text style={styles.totalAmountText}>Total Amount: ₹{totalAmount}</Text>
+                    </View>
                     <TouchableOpacity style={styles.submitbutton} onPress={handleSubmit}>
                         <Text style={styles.submitbuttonText}>Submit</Text>
                     </TouchableOpacity>
