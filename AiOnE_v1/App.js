@@ -20,6 +20,7 @@ import OtherServicesScreen from './src/components/OtherServicesScreen';
 import FoodJointOptionsScreen from './src/components/FoodJointOptionsScreen';
 import ForgotPasswordScreen from './src/components/ForgotPasswordScreen';
 import StationaryOrderScreen from './src/components/StationaryOrderScreen';
+import LibraryScreen from './src/components/LibraryScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -63,6 +64,7 @@ const App = () => {
         <Stack.Screen name = "FoodJointOptions" component = {FoodJointOptionsScreen}/>
         <Stack.Screen name = "ForgotPassword" component = {ForgotPasswordScreen}/>
         <Stack.Screen name = "StationaryOrder" component = {StationaryOrderScreen}/>
+        <Stack.Screen name = "Library" component = {LibraryScreen}/>
       </Stack.Navigator>
       )}
     </NavigationContainer>

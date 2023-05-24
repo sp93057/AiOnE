@@ -22,13 +22,15 @@ export default StyleSheet.create({
     },
 
     headingContainer: {
+        // backgroundColor: '#fff000',
         flex:1,
         width: '100%',
         flexDirection: "row",
-        justifyContent: "space-evenly",
+        justifyContent: "space-between",
         alignItems: "center",
         marginTop: 15,
-        marginBottom: 15
+        marginBottom: 15,
+        padding: 10
 
     },
 
@@ -38,6 +40,11 @@ export default StyleSheet.create({
         color: '#000000',
     },
 
+    authorTextStyle: {
+        fontFamily: 'Poppins-SemiBold',
+        fontSize: 16,
+    },
+
     parkingTileContainer: {
         backgroundColor: '#ffffff',
         borderRadius: 12,
@@ -45,10 +52,11 @@ export default StyleSheet.create({
         width: '100%',
         height: 74,
         flexDirection: "row",
-        justifyContent: "space-evenly",
+        justifyContent: "space-between",
         alignItems: "center",
         marginTop: 15,
-        marginBottom: 15
+        marginBottom: 15,
+        padding: 10
     },
 
     backButton: {
@@ -74,63 +82,4 @@ export default StyleSheet.create({
         color: '#000000',
         marginRight: 5,
     },
-
-
-    container: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        width: 100,
-        height: 40,
-        borderWidth: 1,
-        borderRadius: 8,
-        borderColor: 'gray',
-        paddingHorizontal: 8,
-      },
-
-      button: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      },
-
-      buttonText: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        color: 'black',
-      },
-
-      quantityText: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        color: 'black',
-      },
-
-      submitbutton: {
-        backgroundColor: '#007bff',
-        height: 50,
-        width: 120,
-        backgroundColor: "#52CB5E",
-        borderRadius: 12,
-        justifyContent: 'center',
-        alignItems: 'center',
-      },
-
-      submitbuttonText: {
-        color: '#fff',
-        fontSize: 18,
-        fontWeight: 'bold',
-      },
-
-      submitButtonView: {
-        justifyContent: "space-between",
-        alignItems: "center",
-        flexDirection: "row",
-    },
-
-    totalAmountText: {
-        fontFamily: 'Poppins-Bold',
-        fontSize: 18,
-        color: '#000000',
-    }
 });
