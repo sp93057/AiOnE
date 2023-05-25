@@ -28,7 +28,7 @@ const OtherServicesScreen = ({ navigation }) => {
             <ScrollView>
                 <View style={styles.bodyContainer}>
                     <View style={styles.itemContainer}>
-                        <TouchableOpacity style={styles.item} activeOpacity={0.7}>
+                        <TouchableOpacity style={styles.item} activeOpacity={0.7} onPress={() => navigation.navigate('Gym')}>
                             <Image source={require('../images/gym.png')} style={[styles.imageStyle, { transform: [{ rotate: '135deg' }] }]} />
                         </TouchableOpacity>
                         <Text style={styles.text}>Gym</Text>
@@ -40,13 +40,13 @@ const OtherServicesScreen = ({ navigation }) => {
                         <Text style={styles.text}>Library</Text>
                     </View>
                     <View style={styles.itemContainer}>
-                        <TouchableOpacity style={styles.item} activeOpacity={0.7}>
+                        <TouchableOpacity style={styles.item} activeOpacity={0.7} onPress={() => navigation.navigate('Games')}>
                             <Image source={require('../images/sports.png')} style={styles.imageStyle} />
                         </TouchableOpacity>
                         <Text style={styles.text}>Games</Text>
                     </View>
                     <View style={styles.itemContainer}>
-                        <TouchableOpacity style={styles.item} activeOpacity={0.7}>
+                        <TouchableOpacity style={styles.item} activeOpacity={0.7} onPress={() => navigation.navigate('Amenities')}>
                             <Image source={require('../images/amenities.png')} style={styles.imageStyle} />
                         </TouchableOpacity>
                         <Text style={styles.text}>Amenities</Text>

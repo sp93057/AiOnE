@@ -21,6 +21,10 @@ import FoodJointOptionsScreen from './src/components/FoodJointOptionsScreen';
 import ForgotPasswordScreen from './src/components/ForgotPasswordScreen';
 import StationaryOrderScreen from './src/components/StationaryOrderScreen';
 import LibraryScreen from './src/components/LibraryScreen';
+import FoodMenuFragment from './src/components/FoodMenuFragment';
+import GymScreen from './src/components/GymScreen';
+import GamesScreen from './src/components/GamesScreen';
+import AmenitiesScreen from './src/components/AmenitiesScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -65,6 +69,10 @@ const App = () => {
         <Stack.Screen name = "ForgotPassword" component = {ForgotPasswordScreen}/>
         <Stack.Screen name = "StationaryOrder" component = {StationaryOrderScreen}/>
         <Stack.Screen name = "Library" component = {LibraryScreen}/>
+        <Stack.Screen name = "FoodMenu" component = {FoodMenuFragment}/>
+        <Stack.Screen name = "Gym" component = {GymScreen}/>
+        <Stack.Screen name = "Games" component = {GamesScreen}/>
+        <Stack.Screen name = "Amenities" component = {AmenitiesScreen}/>
       </Stack.Navigator>
       )}
     </NavigationContainer>

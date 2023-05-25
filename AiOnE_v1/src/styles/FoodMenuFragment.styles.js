@@ -1,0 +1,151 @@
+import { StyleSheet } from "react-native";
+export default StyleSheet.create({
+    mainContainer: {
+        flex: 1,
+        backgroundColor: '#E8E8E8',
+        flexDirection: 'column',
+        padding: 20
+    },
+
+    topContainer: {
+        width: '100%',
+        marginTop: 50,
+        marginBottom: 10,
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        backgroundColor: 'transparent'
+    },
+
+    ScrollContainer: {
+        //to be filled if other styling is necessary
+    },
+
+    headingContainer: {
+        // backgroundColor: '#fff000',
+        flex:1,
+        width: '100%',
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        marginTop: 15,
+        marginBottom: 15
+
+    },
+
+    headingTextStyle: {
+        fontFamily: 'Poppins-SemiBold',
+        fontSize: 16,
+        color: '#000000',
+    },
+
+    parkingTileContainer: {
+        backgroundColor: '#ffffff',
+        borderRadius: 12,
+        flex:1,
+        width: '100%',
+        height: 74,
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        marginTop: 15,
+        marginBottom: 15
+    },
+
+    backButton: {
+        height: 50,
+        width: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#ffffff',
+        borderRadius: 12,
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+    },
+
+    textStyle: {
+        marginLeft: 20,
+        fontFamily: 'Poppins-Bold',
+        fontSize: 28,
+        color: '#000000',
+        marginRight: 5,
+    },
+
+    innerContainer: {
+        backgroundColor: '#ffffff',
+        borderRadius: 15,
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+        overflow: "hidden",
+        marginBottom: 10,
+        marginTop: 10
+      },
+    
+      miniHeader: {
+        flex: 1,
+        backgroundColor: '#FFC03D',
+        borderTopLeftRadius: 15,
+        borderTopRightRadius: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row'
+      },
+    
+      headerText: {
+        flex: 1,
+        fontFamily: 'Poppins-SemiBold',
+        fontSize: 24,
+        color: '#000000',
+        marginLeft: 10,
+      },
+    
+      contentContainer: {
+        flex: 4,
+      },
+  
+      miniTextView: {
+        padding: 10,
+        overflow: "hidden"
+      },
+  
+      miniTextHeading: {
+        fontFamily: 'Poppins-SemiBold',
+          fontSize: 20,
+          color: '#000000'
+      },
+      
+      miniTextBody: {
+        fontFamily: 'Poppins-SemiBold',
+          fontSize: 14,
+          color: '#8A8A8A'
+      },
+
+      row: {
+        flex:1,
+        margin:5,
+        flexDirection: "row",
+        justifyContent: "space-between"
+      },
+      item: {
+        fontFamily: 'Poppins-SemiBold',
+        fontSize: 18,
+        color: '#000000',
+        marginLeft: 10
+      },
+      price: {
+        fontFamily: 'Poppins-SemiBold',
+        fontSize: 18,
+        color: '#000000',
+        marginRight: 10
+      }
+});
