@@ -63,7 +63,7 @@ const SidebarScreen = ({ navigation }) => {
           <Text style={styles.tilesText}>Change Password</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.tiles} activeOpacity={0.2}>
+        <TouchableOpacity style={styles.tiles} activeOpacity={0.2} onPress={() => navigation.navigate('ContactUs')}>
           <View style={styles.miniContainer}>
             <ContactIcon height={30} width={30} fill="#ffffff" />
           </View>

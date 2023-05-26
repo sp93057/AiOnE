@@ -25,6 +25,7 @@ import FoodMenuFragment from './src/components/FoodMenuFragment';
 import GymScreen from './src/components/GymScreen';
 import GamesScreen from './src/components/GamesScreen';
 import AmenitiesScreen from './src/components/AmenitiesScreen';
+import ContactUsScreen from './src/components/ContactUsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -73,6 +74,7 @@ const App = () => {
         <Stack.Screen name = "Gym" component = {GymScreen}/>
         <Stack.Screen name = "Games" component = {GamesScreen}/>
         <Stack.Screen name = "Amenities" component = {AmenitiesScreen}/>
+        <Stack.Screen name = "ContactUs" component = {ContactUsScreen}/>
       </Stack.Navigator>
       )}
     </NavigationContainer>

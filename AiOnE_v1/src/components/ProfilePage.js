@@ -110,7 +110,7 @@ const ProfilePage = ({ navigation }) => {
                     <TouchableOpacity style={styles.button} activeOpacity={0.7} onPress={() => navigation.navigate('ChangePassword')}>
                         <Text style={styles.buttonText}> Change Password</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button} activeOpacity={0.7}>
+                    <TouchableOpacity style={styles.button} activeOpacity={0.7} onPress={() => navigation.navigate('ContactUs')}>
                         <Text style={styles.buttonText}> Contact Us </Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.logoutButton} activeOpacity={0.7} onPress={logout}>
