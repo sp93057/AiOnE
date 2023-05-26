@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 
-import { ProfileIcon, ChangePwdIcon, ContactIcon, CloseIcon, ArrowRight } from 'svg';
+import { ProfileIcon, ChangePwdIcon, ContactIcon, ArrowRight } from 'svg';
 import styles from '../styles/Sidebar.styles.js'
 import { getAuth, signOut } from "firebase/auth";
 
@@ -32,42 +32,34 @@ const SidebarScreen = ({ navigation }) => {
       });
   };
 
-  const changePassword = () => {
-    navigation.navigate('ChangePassword');
-  }
-
 
   return (
     <View style={styles.mainContainer}>
       <StatusBar translucent backgroundColor={'transparent'} />
 
-      <View style={styles.topCrossContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-          <CloseIcon height={40} width={40} fill="#ffffff" />
-        </TouchableOpacity>
-      </View>
-
       <View style={styles.subContainer}>
 
-        <TouchableOpacity style={styles.tiles} activeOpacity={0.2} onPress={() => navigation.replace('ProfilePage')}>
+        <TouchableOpacity style={styles.tiles} activeOpacity={0.2} onPress={() => navigation.navigate('ProfilePage')}>
           <View style={styles.miniContainer}>
             <ProfileIcon height={30} width={30} fill="#ffffff" />
+            <Text style={styles.tilesText}>Profile</Text>
           </View>
-          <Text style={styles.tilesText}>Profile</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.tiles} activeOpacity={0.2} onPress={() => navigation.navigate('ChangePassword')}>
           <View style={styles.miniContainer}>
             <ChangePwdIcon height={30} width={30} fill="#ffffff" />
-          </View>
+          
           <Text style={styles.tilesText}>Change Password</Text>
+          </View>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.tiles} activeOpacity={0.2} onPress={() => navigation.navigate('ContactUs')}>
           <View style={styles.miniContainer}>
             <ContactIcon height={30} width={30} fill="#ffffff" />
-          </View>
+          
           <Text style={styles.tilesText}>Contact Us</Text>
+          </View>
         </TouchableOpacity>
       </View>
 

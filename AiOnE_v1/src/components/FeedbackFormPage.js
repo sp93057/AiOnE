@@ -13,12 +13,18 @@ import { BackIcon } from 'svg';
 import styles from '../styles/FeedbackFormPage.style.js'
 import CheckBox from '@react-native-community/checkbox';
 import { Picker } from '@react-native-picker/picker';
+import { getAuth } from "firebase/auth";
+
+const auth = getAuth();
+
+const profileUrl = "https://raw.githubusercontent.com/Prabhash33/AiOnE_DB/main/details_all.json";
 
 const FeedbackFormPage = ({ navigation }) => {
 
     const [selectedLocation, setSelectedLocation] = useState();
     const [isFeedbackChecked, setIsFeedbackChecked] = useState(true);
     const [isAssistanceChecked, setIsAssistanceChecked] = useState(false);
+    const [profileData, setProfileData] = useState(null);
 
     const handleFeedbackCheckbox = () => {
         setIsFeedbackChecked(true);
@@ -44,6 +50,32 @@ const FeedbackFormPage = ({ navigation }) => {
         );
     };
 
+    const user = auth.currentUser;
+    const userId = user.email;
+
+    const fetchData = async () => {
+        try {
+            const response = await fetch(profileUrl);
+            const data = await response.json();
+            for (let obj of data) {
+                if (obj.id === userId.split('@')[0]) {
+                    setProfileData(obj);
+                    break;
+                }
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    if (!profileData) {
+        return null; // or you can return a loading indicator
+    }
+
     return (
         <View style={styles.mainContainer}>
             <StatusBar translucent backgroundColor={'#E8E8E8'} />
@@ -59,13 +91,13 @@ const FeedbackFormPage = ({ navigation }) => {
                 <View style={styles.ProfileContainer}>
                     <View style={styles.topTileTextContainer}>
                         <Text style={styles.miniHeadingText}>Name</Text>
-                        <Text style={styles.nameText}>David Wallace</Text>
+                        <Text style={styles.nameText}>{profileData.name}</Text>
                         <Text style={styles.miniHeadingText}>I-Number</Text>
-                        <Text style={styles.miniValueText}>I123456</Text>
+                        <Text style={styles.miniValueText}>{profileData.id}</Text>
                         <Text style={styles.miniHeadingText}>Email</Text>
-                        <Text style={styles.miniValueText}>david01@company.com</Text>
+                        <Text style={styles.miniValueText}>{profileData.email}</Text>
                         <Text style={styles.miniHeadingText}>Contact No.</Text>
-                        <Text style={styles.miniValueText}>+91 9987643423</Text>
+                        <Text style={styles.miniValueText}>{profileData.phone}</Text>
                     </View>
                 </View>
 

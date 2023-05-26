@@ -4,54 +4,42 @@ export default StyleSheet.create({
       backgroundColor: '#432344',
       height: '100%',
       width: '100%',
+      justifyContent: "center",
       alignItems: 'center',
     },
   
     subContainer: {
       width: '100%',
-      marginTop: 50,
-      marginBottom: 20,
-      marginLeft: 20,
+      justifyContent: "center",
       alignItems: 'center',
       // backgroundColor: '#000000'
     },
-
-    topCrossContainer: {
-      width:'100%',
-      // backgroundColor: '#000000',
-      marginTop: 50,
-      padding: 30,
-      flexDirection: "row",
-      justifyContent: "flex-start"
-    },
   
     miniContainer: {
-      height: 50,
-      width: 50,
+      width: '100%',
       borderRadius: 12,
       overflow: 'hidden',
-      justifyContent: 'center',
-      alignItems: 'center',
-      paddingBottom: 5,
-      flex: 1,
+      flexDirection: "row",
+      justifyContent: 'flex-start',
+      flex: 1
     },
   
     tiles: {
       marginTop: 10,
+      marginLeft: 15,
       backgroundColor: 'transparent',
       borderRadius: 12,
       height: 50,
-      width: 340,
-      alignItems: 'flex-start',
-      flexDirection: 'row',
+      width: '100%',
+      justifyContent: "center",
+      alignItems:"center"
     },
   
     tilesText: {
       fontFamily: 'Poppins-SemiBold',
-      fontSize: 28,
+      fontSize: 21,
       color: '#ffffff',
-      marginLeft: 10,
-      flex: 9,
+      marginLeft: 15,
     },
   
     button: {
@@ -59,7 +47,7 @@ export default StyleSheet.create({
       backgroundColor: '#FFC03D',
       borderRadius: 12,
       height: 50,
-      width: 320,
+      width: 230,
       alignSelf: 'center',
       alignItems: 'center',
       justifyContent: 'center',
