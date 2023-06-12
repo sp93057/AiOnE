@@ -5,7 +5,8 @@ import {
     Text,
     TouchableOpacity,
     SafeAreaView,
-    Alert
+    Alert,
+    Linking
 } from 'react-native';
 import { BackIcon } from 'svg';
 import { ScrollView } from 'react-native';
@@ -17,17 +18,22 @@ import styles from '../styles/ScanQRScreen.styles.js';
 const ScanQRScreen = ({ navigation }) => {
 
     const [isScanning, setIsScanning] = useState(true);
+    const [isBookingVisible, setIsBookingVisible] = useState(false);
 
     const handleReadCode = (event) => {
-        setIsScanning(false);
-        Alert.alert('QR code found', null, [
-            {onPress: navigation.navigate('FeedbackForm')}
-        ]);
+        const qrData = event.nativeEvent.codeStringValue;
+        if((qrData).startsWith("http")){
+            Linking.openURL(qrData);
+        }
+        else if(/^[A-z]/i.test(qrData)){
+//          WRBLR01F5L03
+            if(qrData.startsWith("SR")){
+                  setIsBookingVisible(true);
+            }
+            navigation.navigate('FeedbackForm');
+            setIsBookingVisible(false);
+        }
     };
-
-    /* const handleAlertDismissed = () => {
-        setIsScanning(true);
-    }; */
 
     return (
         <View style={styles.mainContainer}>
