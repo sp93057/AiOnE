@@ -22,19 +22,10 @@ import styles from '../styles/Homescreen.styles.js';
 
 const HomeButtons = ({ navigation }) => {
 
-    
-    const handlePress = () => {
-        const address = 'SAP LABS, 138, SAP Labs Rd, Whitefield, EPIP Zone, Bengaluru, Karnataka 560066';
-        const url = Platform.select({
-          ios: `http://maps.apple.com/?address=${encodeURIComponent(address)}`,
-          android: `http://maps.google.com/?q=${encodeURIComponent(address)}`,
-        });
-        Linking.openURL(url);
-      };
-
     return (
         <View>
-            <TouchableOpacity style={styles.tiles} activeOpacity={0.7} onPress={handlePress}>
+            <TouchableOpacity style={styles.tiles} activeOpacity={0.7}
+                onPress={() => navigation.navigate('QRScanner')}>
                 <View style={styles.miniContainer}>
                     <NavigationIcon height={50} width={50} />
                 </View>
