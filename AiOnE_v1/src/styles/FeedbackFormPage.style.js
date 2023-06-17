@@ -12,10 +12,13 @@ export default StyleSheet.create({
     topContainer: {
         flex:1,
         width:'100%',
+        // backgroundColor: '#000000',
         padding: 10,
+        height: 100,
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
+        overflow: "hidden"
     },
 
     bodyContainer: {
@@ -213,7 +216,9 @@ export default StyleSheet.create({
     },
 
     submitButton: {
-        justifyContent: "center",
-        alignItems: "center"
+        flex:1,
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+        // backgroundColor: '#000000',
     }
 });

@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     View,
     StatusBar,
     Text,
     ScrollView,
     TouchableOpacity,
-    Alert,
     TextInput,
+    ToastAndroid,
+    Platform,
+    AlertIOS,
 } from 'react-native';
 import { BackIcon } from 'svg';
 
@@ -37,18 +39,28 @@ const FeedbackFormPage = ({ navigation }) => {
     };
 
     const handleSubmit = () => {
-        Alert.alert(
-            'Success',
-            'Your submission was successful!',
-            [
-                {
-                    text: 'OK',
-                    onPress: () => navigation.navigate('Home'),
-                },
-            ],
-            { cancelable: false }
-        );
+        if (Platform.OS === 'android') {
+            ToastAndroid.show("Form Submitted Successfully", ToastAndroid.LONG);
+        } else if (Platform.OS === 'ios') {
+            AlertIOS.alert("Form Submitted Successfully");
+        }
+        navigation.reset({
+            index: 0,
+            routes: [{ name: 'Home' }],
+        })
     };
+
+    const handleBook = () => {
+        if (Platform.OS === 'android') {
+            ToastAndroid.show("Booked Successfully", ToastAndroid.LONG);
+        } else if (Platform.OS === 'ios') {
+            AlertIOS.alert("Booked Successfully");
+        }
+        navigation.reset({
+            index: 0,
+            routes: [{ name: 'Home' }],
+        })
+    }
 
     const user = auth.currentUser;
     const userId = user.email;
@@ -136,6 +148,9 @@ const FeedbackFormPage = ({ navigation }) => {
                 </View>
 
                 <View style={styles.submitButton}>
+                    <TouchableOpacity style={styles.button} onPress={handleBook}>
+                        <Text style={styles.buttonText}>Book</Text>
+                    </TouchableOpacity>
                     <TouchableOpacity style={styles.button} onPress={handleSubmit}>
                         <Text style={styles.buttonText}>Submit</Text>
                     </TouchableOpacity>
